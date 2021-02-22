@@ -1,11 +1,27 @@
-#About
+# Ecommerce Project
+## About 
 
-Mockups Figma Link: https://www.figma.com/file/V2JbydqmPFQjAK8Xmf8SlU/Pesto-ecommerce?node-id=0%3A1
-
-# Getting Started with Create React App
-
-This project is deployed at: https://ecommerce-deep-dive.netlify.app/ \
+### This project is deployed at: https://ecommerce-deep-dive.netlify.app/ \
 \
+### Mockups Figma Link: https://www.figma.com/file/V2JbydqmPFQjAK8Xmf8SlU/Pesto-ecommerce?node-id=0%3A1
+\
+### Mock up Conceptualiztion
+\
+1. Landing Page
+![](https://i.ibb.co/RH9R8h0/landing-page.png)
+
+2. Product Page
+![](https://i.ibb.co/vcpV9s9/product-page.png)
+
+3. Checkout Page
+![](https://i.ibb.co/nLC356V/catagory-page.png)
+
+4. Other Features
+![](https://i.ibb.co/0QyYYPX/other-features.png)
+
+
+## Getting Started with Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
