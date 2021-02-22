@@ -5,7 +5,7 @@
 
 ### Mockups Figma Link: https://www.figma.com/file/V2JbydqmPFQjAK8Xmf8SlU/Pesto-ecommerce?node-id=0%3A1
 
-### Mock up Conceptualiztion
+### Application Conceptualiztion
 
 1. Landing Page
 ![](https://i.ibb.co/RH9R8h0/landing-page.png)
