@@ -14,7 +14,7 @@
 ![](https://i.ibb.co/nLC356V/catagory-page.png)
 
 3. Product Page
-![](https://i.ibb.co/vcpV9s9/product-page.png)
+![](https://i.ibb.co/4VHhK4z/product-page.png)
 
 4. Checkout Page
 ![](https://i.ibb.co/nPGjwYZ/checkout-page.png)
