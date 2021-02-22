@@ -10,13 +10,16 @@
 1. Landing Page
 ![](https://i.ibb.co/RH9R8h0/landing-page.png)
 
-2. Product Page
-![](https://i.ibb.co/vcpV9s9/product-page.png)
-
-3. Checkout Page
+2. Category Page
 ![](https://i.ibb.co/nLC356V/catagory-page.png)
 
-4. Other Features
+3. Product Page
+![](https://i.ibb.co/vcpV9s9/product-page.png)
+
+4. Checkout Page
+![](https://i.ibb.co/nPGjwYZ/checkout-page.png)
+
+5. Other Features
 ![](https://i.ibb.co/0QyYYPX/other-features.png)
 
 
