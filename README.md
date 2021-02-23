@@ -3,6 +3,8 @@
 
 ### This project is deployed at: https://ecommerce-deep-dive.netlify.app/
 
+### Project Plan and Timelines: https://share.clickup.com/l/h/4-3426604-1/65c459da2313c91
+
 ### Figma Mockups for the application UI can be found: https://www.figma.com/file/V2JbydqmPFQjAK8Xmf8SlU/Pesto-ecommerce?node-id=0%3A1
 
 ### Application Conceptualiztion
