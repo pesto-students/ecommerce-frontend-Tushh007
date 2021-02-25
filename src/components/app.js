@@ -8,10 +8,10 @@ const App = () => {
         <br />
         <a
           className="button-line"
-          href="https://github.com/Tushh007"
+          href="https://github.com/pesto-students/ecommerce-frontend-Tushh007"
           target="_blank"
         >
-          Know more now
+          Check Github Repository
         </a>
       </div>
     </div>
