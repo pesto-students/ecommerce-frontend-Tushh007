@@ -1,5 +1,6 @@
 .productRow {
   margin: auto;
+  margin-top: 5px;
   width: 90%;
 }
 
@@ -16,7 +17,7 @@
 
 .productRow__item {
   object-fit: contain;
-  min-width: 15%;
+  min-width: 250px;
   margin: 20px;
   transition: transform 450ms;
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0);

@@ -18,13 +18,15 @@ function App() {
         <button onClick={() => setLocale(LOCALES.ENGLISH)}>English</button>
         <button onClick={() => setLocale(LOCALES.GERMAN)}>German</button>
         <button onClick={() => setLocale(LOCALES.FRENCH)}>French</button>
+        <div className="home">
         <Home />
+        </div>
+
         {/**Navigation bar */}
         {/**Carousel Banner */}
         {/**Category Tiles */}
         <div className="products">
           <ProductRow title="Featured Products" items={PRODUCTS} />
-          <ProductRow title="Recommended for you" items={PRODUCTS} />
         </div>
         <Footer />
       </div>
