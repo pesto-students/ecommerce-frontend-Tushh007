@@ -7,11 +7,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import translate from '../../utils/i18n/translate';
 
 function ProductRow({ title, items }) {
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
   return (
     <div className="productRow">
-      <h2>{title}</h2>
+      <h2>{translator(title)}</h2>
 
       <div className="productRow__items">
         {items.map((item) => (
@@ -24,13 +27,13 @@ function ProductRow({ title, items }) {
                 component="img"
                 height="340"
                 image={item.imageUrl}
-                title={item.name}
-                alt={item.name}
+                title={translator(item.name)}
+                alt={translator(item.name)}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   <div className="productRow__itemWishlist">
-                    <strong>{item.name}</strong>
+                    <strong>{translator(item.name)}</strong>
                     <FavoriteBorderIcon fontSize="large" />
                   </div>
                 </Typography>

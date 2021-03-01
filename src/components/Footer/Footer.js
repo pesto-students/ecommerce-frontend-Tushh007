@@ -6,67 +6,73 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import translate from '../../utils/i18n/translate';
 
 function Footer() {
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
   return (
     <div className="footer">
       <div className="container"></div>
       <footer>
         <section className="ft-main">
           <div className="ft-main-item">
-            <h2 className="ft-title">About</h2>
+            <h2 className="ft-title">{translator('About')}</h2>
             <ul>
               <li>
-                <a href="#">Services</a>
+                <a href="#">{translator('Services')}</a>
               </li>
               <li>
-                <a href="#">Portfolio</a>
+                <a href="#">{translator('Portfolio')}</a>
               </li>
               <li>
-                <a href="#">Pricing</a>
+                <a href="#">{translator('Pricing')}</a>
               </li>
               <li>
-                <a href="#">Customers</a>
+                <a href="#">{translator('Customers')}</a>
               </li>
               <li>
-                <a href="#">Careers</a>
+                <a href="#">{translator('Careers')}</a>
               </li>
             </ul>
           </div>
           <div className="ft-main-item">
-            <h2 className="ft-title">Resources</h2>
+            <h2 className="ft-title">{translator('Resources')}</h2>
             <ul>
               <li>
-                <a href="#">Docs</a>
+                <a href="#">{translator('Docs')}</a>
               </li>
               <li>
-                <a href="#">Blog</a>
+                <a href="#">{translator('Blog')}</a>
               </li>
               <li>
-                <a href="#">eBooks</a>
+                <a href="#">{translator('eBooks')}</a>
               </li>
               <li>
-                <a href="#">Webinars</a>
+                <a href="#">{translator('Webinars')}</a>
               </li>
             </ul>
           </div>
           <div className="ft-main-item">
-            <h2 className="ft-title">Contact</h2>
+            <h2 className="ft-title">{translator('Contact')}</h2>
             <ul>
               <li>
-                <a href="#">Help</a>
+                <a href="#">{translator('Help')}</a>
               </li>
               <li>
-                <a href="#">Sales</a>
+                <a href="#">{translator('Sales')}</a>
               </li>
               <li>
-                <a href="#">Advertise</a>
+                <a href="#">{translator('Advertise')}</a>
               </li>
             </ul>
           </div>
           <div className="ft-main-item">
-            <h2 className="ft-title">Stay Updated</h2>
-            <p>Subscribe to our newsletter to get our latest news.</p>
+            <h2 className="ft-title">{translator('Stay Updated')}</h2>
+            <p>
+              {translator('Subscribe to our newsletter to get our latest news')}
+              .
+            </p>
             <form>
               <input
                 type="email"
@@ -116,12 +122,12 @@ function Footer() {
         <section className="ft-legal">
           <ul className="ft-legal-list">
             <li>
-              <a href="#">Terms &amp; Conditions</a>
+              <a href="#">{translator('Terms & Conditions')}</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="#">{translator('Privacy Policy')}</a>
             </li>
-            <li>&copy; 2021 Copyright Ecommerce Inc.</li>
+            <li>&copy; 2021 {translator('Copyright')} Ecommerce Inc.</li>
           </ul>
         </section>
       </footer>
