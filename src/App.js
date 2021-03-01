@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Footer from './components/Footer/Footer';
 import ProductRow from './components/ProductRow/ProductRow';
@@ -7,6 +8,7 @@ import { PRODUCTS } from './utils/products';
 
 import { I18nProvider, LOCALES } from './utils/i18n';
 import translate from './utils/i18n/translate';
+
 
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
