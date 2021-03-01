@@ -1,4 +1,8 @@
-/* APp css */
-.body{
-    font-family: 'Raleway', sans-serif;
+
+.body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.products {
+  margin: 20px;
 }
