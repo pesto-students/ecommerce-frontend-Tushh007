@@ -1,9 +1,11 @@
+import Home from "./views/Home/Home";
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World! Let's build this ecommerce react application.</h1>
+      <Home/>
     </div>
   );
 }
