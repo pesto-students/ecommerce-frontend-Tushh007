@@ -27,7 +27,7 @@ export default {
     'Subscribe to our newsletter to get our latest news':
       'Abonnieren Sie unseren Newsletter, um unsere neuesten Nachrichten zu erhalten',
     'Enter email address': 'E-Mail Adresse eingeben',
-    'Terms & Conditions': 'Terms & amp; Bedingungen',
+    'Terms & Conditions': 'Terms & Bedingungen',
     'Privacy Policy': 'Datenschutz-Bestimmungen',
     Copyright: 'Urheberrechte ',
   },
