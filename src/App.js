@@ -108,7 +108,6 @@ function App() {
       {/**Category Tiles */}
       <ProductRow title="Featured Products" items={products} />
       <ProductRow title="Recommended for you" items={products} />
-      <Footer />
     </div>
   );
 }
