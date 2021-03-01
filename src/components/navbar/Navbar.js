@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -46,7 +45,6 @@ const Navbar = () => {
   const handleDesktopProfileMenuclick = (e) => {
     setAnchorEl(e.currentTarget);
   };
-
   const translator = (item) =>
     translate(item) === item ? item : translate(item);
 
@@ -79,7 +77,6 @@ const Navbar = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" >
         <IconButton aria-label="show 4 new mails">
           <Badge badgeContent={0} color="secondary">
             <ShoppingCartOutlinedIcon />
