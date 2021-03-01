@@ -2,6 +2,10 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.FRENCH]: {
+    'Classic Collection 2021': 'Collection Classique 2021',
+    'COLLECTION 2021': 'COLLECTION 2021',
+    'Fresh Collection 2021': 'Collection fraîche 2021',
+    'Fashion Collection 2021': 'Collection de mode 2021',
     Login: 'Connexion',
     Account: 'Compte',
     Orders: 'Ordres',
