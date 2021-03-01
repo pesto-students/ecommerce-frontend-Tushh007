@@ -2,6 +2,9 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.ENGLISH]: {
+    'Login': 'Login',
+    'Account': 'Account',
+    'Orders': 'Orders',
     'Featured Products': 'Featured Products',
     'Recommended for you': 'Recommended for you',
     'Tinny Three Quarter Sleeve Dress': 'Tinny Three Quarter Sleeve Dress',

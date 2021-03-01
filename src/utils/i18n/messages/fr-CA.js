@@ -2,6 +2,9 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.FRENCH]: {
+    Login: 'Connexion',
+    Account: 'Compte',
+    Orders: 'Ordres',
     'Featured Products': 'Produits populaires',
     'Recommended for you': 'Recommandé pour vous',
     'Tinny Three Quarter Sleeve Dress': 'Robe moulante à manches trois-quarts',

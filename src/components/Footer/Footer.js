@@ -127,7 +127,7 @@ function Footer() {
             <li>
               <a href="#">{translator('Privacy Policy')}</a>
             </li>
-            <li>&copy; 2021 {translator('Copyright')} Ecommerce Inc.</li>
+            <li>&copy; 2021 {translator('Copyright')} Little Tags Inc.</li>
           </ul>
         </section>
       </footer>

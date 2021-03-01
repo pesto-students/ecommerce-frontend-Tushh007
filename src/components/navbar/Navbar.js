@@ -1,20 +1,22 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Search from "../Search/Search";
-import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
-import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import Badge from "@material-ui/core/Badge";
-import "./Navbar.scss";
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Search from '../Search/Search';
+import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Badge from '@material-ui/core/Badge';
+import './Navbar.scss';
+import translate from '../../utils/i18n/translate';
+import LanguageIcon from '@material-ui/icons/Language';
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -44,36 +46,39 @@ const Navbar = () => {
     setAnchorEl(e.currentTarget);
   };
 
-  const menuId = "desktopProfileMenu";
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
+
+  const menuId = 'desktopProfileMenu';
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Login</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My orders</MenuItem>
+      <MenuItem onClick={handleMenuClose}>{translator('Login')}</MenuItem>
+      <MenuItem onClick={handleMenuClose}>{translator('Account')}</MenuItem>
+      <MenuItem onClick={handleMenuClose}>{translator('Orders')}</MenuItem>
     </Menu>
   );
 
-  const mobileMenuId = "mobileProfileMenu";
+  const mobileMenuId = 'mobileProfileMenu';
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" >
+        <IconButton aria-label="show 4 new mails">
           <Badge badgeContent={0} color="secondary">
             <ShoppingCartOutlinedIcon />
           </Badge>
@@ -104,6 +109,13 @@ const Navbar = () => {
       <div className="navbar_right">
         <Search />
         <div className="navbar_desktopMenu">
+          <IconButton
+            aria-controls={menuId}
+            aria-haspopup="true"
+            onClick={handleDesktopProfileMenuclick}
+          >
+            <LanguageIcon />
+          </IconButton>
           <IconButton
             aria-controls={menuId}
             aria-haspopup="true"

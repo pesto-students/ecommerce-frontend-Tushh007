@@ -2,6 +2,9 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.GERMAN]: {
+    Login: 'Anmeldung',
+    Account: 'Konto',
+    Orders: 'Aufträge',
     'Featured Products': 'Ausgewählte Produkte',
     'Recommended for you': 'Für dich empfohlen',
     'Tinny Three Quarter Sleeve Dress': 'Dünnes Dreiviertel-Ärmelkleid',

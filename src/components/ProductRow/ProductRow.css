@@ -1,5 +1,6 @@
 .productRow {
-  margin-left: 20px;
+  margin: auto;
+  width: 90%;
 }
 
 .productRow__items {

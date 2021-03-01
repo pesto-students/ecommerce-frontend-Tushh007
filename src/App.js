@@ -1,14 +1,12 @@
-
 import React, { useState } from 'react';
 import Footer from './components/Footer/Footer';
 import ProductRow from './components/ProductRow/ProductRow';
-import Home from "./views/Home/Home";
+import Home from './views/Home/Home';
 import './App.css';
 import { PRODUCTS } from './utils/products';
 
 import { I18nProvider, LOCALES } from './utils/i18n';
 import translate from './utils/i18n/translate';
-
 
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
@@ -22,8 +20,10 @@ function App() {
         {/**Navigation bar */}
         {/**Carousel Banner */}
         {/**Category Tiles */}
-        <ProductRow title="Featured Products" items={PRODUCTS} />
-        <ProductRow title="Recommended for you" items={PRODUCTS} />
+        <div className="products">
+          <ProductRow title="Featured Products" items={PRODUCTS} />
+          <ProductRow title="Recommended for you" items={PRODUCTS} />
+        </div>
         <Footer />
       </div>
     </I18nProvider>
