@@ -108,11 +108,7 @@ const Navbar = () => {
       <div className="navbar_right">
         <Search />
         <div className="navbar_desktopMenu">
-          <IconButton
-            aria-controls={menuId}
-            aria-haspopup="true"
-            onClick={handleDesktopProfileMenuclick}
-          >
+          <IconButton>
             <LanguageIcon />
           </IconButton>
           <IconButton
