@@ -3,7 +3,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Hello World! Let's build this ecommerce react application.</h1>
+      {/**Navigation bar */}
+      {/**Carousel Banner */}
+      {/**Category Tiles */}
+      {/**Product Rows */}
+      {/**Footer */}
     </div>
   );
 }
