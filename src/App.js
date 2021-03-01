@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       {/**Carousel Banner */}
       {/**Category Tiles */}
       {/**Product Rows */}
-      {/**Footer */}
+      <Footer />
     </div>
   );
 }
