@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { useStateValue } from '../../store/StoreProvider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Search from '../Search/Search';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
@@ -17,36 +12,33 @@ import Badge from '@material-ui/core/Badge';
 import './Navbar.scss';
 import translate from '../../utils/i18n/translate';
 import LanguageIcon from '@material-ui/icons/Language';
+import { LOCALES } from '../../utils/i18n';
+
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const [{ locale }, dispatch] = useStateValue();
+
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
+
+  // Profile Menu
   const [anchorEl, setAnchorEl] = useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = () => {
+  const handleProfileMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
 
-  const handleDesktopProfileMenuclick = (e) => {
+  const handleProfileMenuclick = (e) => {
     setAnchorEl(e.currentTarget);
   };
-  const translator = (item) =>
-    translate(item) === item ? item : translate(item);
 
   const menuId = 'desktopProfileMenu';
   const renderMenu = (
@@ -57,13 +49,76 @@ const Navbar = () => {
       keepMounted
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
+      onClose={handleProfileMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>{translator('Login')}</MenuItem>
-      <MenuItem onClick={handleMenuClose}>{translator('Account')}</MenuItem>
-      <MenuItem onClick={handleMenuClose}>{translator('Orders')}</MenuItem>
+      <MenuItem onClick={handleProfileMenuClose}>
+        {translator('Login')}
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuClose}>
+        {translator('Account')}
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuClose}>
+        {translator('Orders')}
+      </MenuItem>
     </Menu>
   );
+
+  // Language Menu
+  const [languageAnchorEl, setLanguageAnchorEl] = React.useState(null);
+
+  const isLanguageMenuOpen = Boolean(languageAnchorEl);
+
+  const handleLanguageMenuOpen = (event) => {
+    setLanguageAnchorEl(event.currentTarget);
+  };
+
+  const handleLanguageMenuClose = (locale) => {
+    dispatch({
+      type: 'SET_LOCALE',
+      locale: locale,
+    });
+    setLanguageAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleLanguageMenuclick = (e) => {
+    setLanguageAnchorEl(e.currentTarget);
+  };
+
+  const languageId = 'languageMenu';
+  const renderLanguageMenu = (
+    <Menu
+      anchorEl={languageAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={languageId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isLanguageMenuOpen}
+      onClose={handleLanguageMenuClose}
+    >
+      <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.ENGLISH)}>
+        {translator('English')}
+      </MenuItem>
+      <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.GERMAN)}>
+        {translator('German')}
+      </MenuItem>
+      <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.FRENCH)}>
+        {translator('French')}
+      </MenuItem>
+    </Menu>
+  );
+
+  // Mobile Menu
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
 
   const mobileMenuId = 'mobileProfileMenu';
   const renderMobileMenu = (
@@ -103,29 +158,40 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h2 className="navbarLogo">Little Tags</h2>
-      <h2 className="navbarMobileLogo">LT</h2>
-      <div className="navbar_right">
+      <Link className="navbar__link" to="/">
+        <h2 className="navbarLogo">Little Tags</h2>
+        <h2 className="navbarMobileLogo">LT</h2>
+      </Link>
+
+      <div className="navbar__right">
         <Search />
-        <div className="navbar_desktopMenu">
-          <IconButton>
+        <div className="navbar__desktopMenu">
+          <IconButton
+            aria-controls={languageId}
+            aria-haspopup="true"
+            onClick={handleLanguageMenuclick}
+          >
             <LanguageIcon />
           </IconButton>
+
           <IconButton
             aria-controls={menuId}
             aria-haspopup="true"
-            onClick={handleDesktopProfileMenuclick}
+            onClick={handleProfileMenuclick}
           >
             <PersonOutlineOutlinedIcon />
           </IconButton>
+
           <IconButton>
             <FavoriteBorderIcon />
           </IconButton>
+
           <IconButton>
             <ShoppingCartOutlinedIcon />
           </IconButton>
         </div>
-        <div className="navbar_mobileMenu">
+
+        <div className="navbar__mobileMenu">
           <IconButton
             aria-label="show more"
             aria-controls={mobileMenuId}
@@ -137,6 +203,7 @@ const Navbar = () => {
           </IconButton>
         </div>
       </div>
+      {renderLanguageMenu}
       {renderMenu}
       {renderMobileMenu}
     </nav>

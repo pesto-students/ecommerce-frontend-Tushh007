@@ -1,36 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { I18nProvider } from './utils/i18n';
+import { useStateValue } from './store/StoreProvider';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-import ProductRow from './components/ProductRow/ProductRow';
 import Home from './views/Home/Home';
+import Navbar from './components/navbar/Navbar';
 import './App.css';
-import { PRODUCTS } from './utils/products';
-
-import { I18nProvider, LOCALES } from './utils/i18n';
-import translate from './utils/i18n/translate';
-
-
 
 function App() {
-  const [locale, setLocale] = useState(LOCALES.ENGLISH);
+  const [{ locale }] = useStateValue();
   return (
-    <I18nProvider locale={locale}>
-      <div className="App">
-        <button onClick={() => setLocale(LOCALES.ENGLISH)}>English</button>
-        <button onClick={() => setLocale(LOCALES.GERMAN)}>German</button>
-        <button onClick={() => setLocale(LOCALES.FRENCH)}>French</button>
-        <div className="home">
-        <Home />
+    <Router>
+      <I18nProvider locale={locale}>
+        <div className="App">
+          <Switch>
+            <Route path="/wishlist">
+              <Navbar />
+              <p>wishlist page</p>
+              <Footer />
+            </Route>
+            <Route path="/">
+              <Navbar />
+              <Home />
+              <Footer />
+            </Route>
+          </Switch>
         </div>
-
-        {/**Navigation bar */}
-        {/**Carousel Banner */}
-        {/**Category Tiles */}
-        <div className="products">
-          <ProductRow title="Featured Products" items={PRODUCTS} />
-        </div>
-        <Footer />
-      </div>
-    </I18nProvider>
+      </I18nProvider>
+    </Router>
   );
 }
 

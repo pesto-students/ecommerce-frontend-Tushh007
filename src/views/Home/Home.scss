@@ -11,19 +11,19 @@
     grid-row-gap: 20px;
     grid-column-gap: 20px;
     grid-template-areas:
-      "home__categories1 home__categories2 home__categories3"
-      "home__categories1 home__categories2 home__categories3"
-      "home__categories1 home__categories4 home__categories4";
+      'home__categories1 home__categories2 home__categories3'
+      'home__categories1 home__categories2 home__categories3'
+      'home__categories1 home__categories4 home__categories4';
     @media (max-width: 600px) {
       width: 90%;
       height: 150vh;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
       grid-template-areas:
-        "home__categories1"
-        "home__categories2"
-        "home__categories3"
-        "home__categories4";
+        'home__categories1'
+        'home__categories2'
+        'home__categories3'
+        'home__categories4';
       margin-bottom: 50px;
     }
     .home__categories1 {
@@ -55,8 +55,7 @@
       background-repeat: no-repeat;
     }
   }
-  .home__products{
+  .home__products {
     display: flex;
-
   }
 }

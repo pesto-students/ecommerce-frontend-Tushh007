@@ -2,6 +2,10 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.FRENCH]: {
+    German: 'Allemand',
+    French: 'Français',
+    English: 'Anglais',
+    'Learn More': 'Apprendre encore plus',
     'Classic Collection 2021': 'Collection Classique 2021',
     'COLLECTION 2021': 'COLLECTION 2021',
     'Fresh Collection 2021': 'Collection fraîche 2021',

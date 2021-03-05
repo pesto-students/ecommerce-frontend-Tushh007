@@ -42,7 +42,7 @@ const Carousel = () => {
               {translator(images[currImg].title)}
             </h1>
             <button className="carousel__button">
-              {images[currImg].buttonContent}
+              {translator(images[currImg].buttonContent)}
             </button>
           </div>
         </div>

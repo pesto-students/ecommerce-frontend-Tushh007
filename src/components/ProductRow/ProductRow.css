@@ -50,3 +50,16 @@
   background-color: #f15a24;
   border-radius: 999px;
 }
+
+button {
+  color: blue;
+  border: none;
+  background-color: white;
+  text-align: center;
+  padding: 14px;
+  /* text-decoration: none; */
+  cursor: pointer;
+}
+button:hover {
+  background-color: whitesmoke;
+}

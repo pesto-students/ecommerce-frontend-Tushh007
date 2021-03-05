@@ -7,8 +7,10 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import translate from '../../utils/i18n/translate';
+import { useIntl } from 'react-intl';
 
 function Footer() {
+  const intl = useIntl();
   const translator = (item) =>
     translate(item) === item ? item : translate(item);
   return (
@@ -77,9 +79,12 @@ function Footer() {
               <input
                 type="email"
                 name="email"
-                placeholder="Enter email address"
+                placeholder={intl.formatMessage({ id: 'Enter email address' })}
               />
-              <input type="submit" value="Subscribe" />
+              <input
+                type="submit"
+                value={intl.formatMessage({ id: 'Subscribe' })}
+              />
             </form>
           </div>
         </section>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProductRow.css';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -8,14 +8,18 @@ import Typography from '@material-ui/core/Typography';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import translate from '../../utils/i18n/translate';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 function ProductRow({ title, items }) {
   const translator = (item) =>
     translate(item) === item ? item : translate(item);
+
   return (
     <div className="productRow">
       <h2>{translator(title)}</h2>
 
+      <div className="productRow__itemsRow"></div>
       <div className="productRow__items">
         {items.map((item) => (
           <Card

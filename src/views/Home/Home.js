@@ -1,15 +1,13 @@
-import React from "react";
-import Navbar from "../../components/navbar/Navbar";
-import Carousel from "../../components/carousel/Carousel";
-import { bannerImages } from "./BannerData";
-import { PRODUCTS } from "../../utils/products";
-import ProductRow from "../../components/ProductRow/ProductRow";
-import "./Home.scss";
+import React from 'react';
+import ProductRow from '../../components/ProductRow/ProductRow';
+import { PRODUCTS } from '../../utils/products';
+import Carousel from '../../components/carousel/Carousel';
+import { bannerImages } from './BannerData';
+import './Home.scss';
 
 const Home = () => {
   return (
     <div className="home">
-      <Navbar />
       <Carousel />
       <div className="home__categories">
         <div
@@ -28,6 +26,9 @@ const Home = () => {
           className="home__categories4"
           style={{ backgroundImage: `url(${bannerImages[3].img})` }}
         ></div>
+      </div>
+      <div className="products">
+        <ProductRow title="Featured Products" items={PRODUCTS} />
       </div>
     </div>
   );
