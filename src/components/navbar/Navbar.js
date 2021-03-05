@@ -14,6 +14,8 @@ import translate from '../../utils/i18n/translate';
 import LanguageIcon from '@material-ui/icons/Language';
 import { LOCALES } from '../../utils/i18n';
 
+import Tooltip from '@material-ui/core/Tooltip';
+
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -166,29 +168,37 @@ const Navbar = () => {
       <div className="navbar__right">
         <Search />
         <div className="navbar__desktopMenu">
-          <IconButton
-            aria-controls={languageId}
-            aria-haspopup="true"
-            onClick={handleLanguageMenuclick}
-          >
-            <LanguageIcon />
-          </IconButton>
+          <Tooltip title="Language" aria-label="Language">
+            <IconButton
+              aria-controls={languageId}
+              aria-haspopup="true"
+              onClick={handleLanguageMenuclick}
+            >
+              <LanguageIcon />
+            </IconButton>
+          </Tooltip>
 
-          <IconButton
-            aria-controls={menuId}
-            aria-haspopup="true"
-            onClick={handleProfileMenuclick}
-          >
-            <PersonOutlineOutlinedIcon />
-          </IconButton>
+          <Tooltip title="Profile" aria-label="Profile">
+            <IconButton
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuclick}
+            >
+              <PersonOutlineOutlinedIcon />
+            </IconButton>
+          </Tooltip>
 
-          <IconButton>
-            <FavoriteBorderIcon />
-          </IconButton>
+          <Tooltip title="Wishlist" aria-label="Wishlist">
+            <IconButton>
+              <FavoriteBorderIcon />
+            </IconButton>
+          </Tooltip>
 
-          <IconButton>
-            <ShoppingCartOutlinedIcon />
-          </IconButton>
+          <Tooltip title="Cart" aria-label="Cart">
+            <IconButton>
+              <ShoppingCartOutlinedIcon />
+            </IconButton>
+          </Tooltip>
         </div>
 
         <div className="navbar__mobileMenu">
