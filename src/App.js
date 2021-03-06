@@ -19,6 +19,11 @@ function App() {
               <p>wishlist page</p>
               <Footer />
             </Route>
+            <Route path="/cart">
+              <Navbar />
+              <p>cart page</p>
+              <Footer />
+            </Route>
             <Route path="/">
               <Navbar />
               <Home />

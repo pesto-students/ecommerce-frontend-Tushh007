@@ -2,6 +2,7 @@ import { LOCALES } from '../utils/i18n';
 
 export const initialState = {
   locale: LOCALES.ENGLISH,
+  user: null,
 };
 
 export const actionTypes = {

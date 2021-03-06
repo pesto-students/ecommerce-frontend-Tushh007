@@ -17,9 +17,10 @@ import { LOCALES } from '../../utils/i18n';
 import Tooltip from '@material-ui/core/Tooltip';
 
 import { Link } from 'react-router-dom';
+import Login from '../login/Login';
 
 const Navbar = () => {
-  const [{ locale }, dispatch] = useStateValue();
+  const [{ locale, user }, dispatch] = useStateValue();
 
   const translator = (item) =>
     translate(item) === item ? item : translate(item);
@@ -54,13 +55,10 @@ const Navbar = () => {
       onClose={handleProfileMenuClose}
     >
       <MenuItem onClick={handleProfileMenuClose}>
-        {translator('Login')}
+        {translator('Logout')}
       </MenuItem>
       <MenuItem onClick={handleProfileMenuClose}>
-        {translator('Account')}
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuClose}>
-        {translator('Orders')}
+        {translator('Your Orders')}
       </MenuItem>
     </Menu>
   );
@@ -160,45 +158,73 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Link className="navbar__link" to="/">
-        <h2 className="navbarLogo">Little Tags</h2>
-        <h2 className="navbarMobileLogo">LT</h2>
-      </Link>
+      <div className="navbar__logo">
+        <Link className="navbar__link" to="/">
+          <h2 className="navbarLogo">Little Tags</h2>
+          <h2 className="navbarMobileLogo">LT</h2>
+        </Link>
+      </div>
+
+      <Search className="navbar__search" />
 
       <div className="navbar__right">
-        <Search />
         <div className="navbar__desktopMenu">
-          <Tooltip title="Language" aria-label="Language">
-            <IconButton
-              aria-controls={languageId}
-              aria-haspopup="true"
-              onClick={handleLanguageMenuclick}
-            >
-              <LanguageIcon />
-            </IconButton>
-          </Tooltip>
+          <div className="navbar__option">
+            <div className="navbar__option">
+              {user ? (
+                <>
+                  <span className="navbar__username">
+                    Hello, tushar.langer@gmail.com
+                  </span>
+                  <Tooltip title="Profile" aria-label="Profile">
+                    <IconButton
+                      aria-controls={menuId}
+                      aria-haspopup="true"
+                      onClick={handleProfileMenuclick}
+                    >
+                      <PersonOutlineOutlinedIcon />
+                    </IconButton>
+                  </Tooltip>
+                </>
+              ) : (
+                <>
+                  <span className="navbar__username">Hello, Guest</span>
+                  <Tooltip title="Login" aria-label="Login">
+                    <Login />
+                  </Tooltip>
+                </>
+              )}
+            </div>
+            <Tooltip title="Language" aria-label="Language">
+              <IconButton
+                aria-controls={languageId}
+                aria-haspopup="true"
+                onClick={handleLanguageMenuclick}
+              >
+                <LanguageIcon />
+              </IconButton>
+            </Tooltip>
+          </div>
 
-          <Tooltip title="Profile" aria-label="Profile">
-            <IconButton
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuclick}
-            >
-              <PersonOutlineOutlinedIcon />
-            </IconButton>
-          </Tooltip>
+          <div className="navbar__option">
+            <Link className="navbar__link" to="/wishlist">
+              <Tooltip title="Wishlist" aria-label="Wishlist">
+                <IconButton>
+                  <FavoriteBorderIcon />
+                </IconButton>
+              </Tooltip>
+            </Link>
+          </div>
 
-          <Tooltip title="Wishlist" aria-label="Wishlist">
-            <IconButton>
-              <FavoriteBorderIcon />
-            </IconButton>
-          </Tooltip>
-
-          <Tooltip title="Cart" aria-label="Cart">
-            <IconButton>
-              <ShoppingCartOutlinedIcon />
-            </IconButton>
-          </Tooltip>
+          <div className="navbar__option">
+            <Link className="navbar__link" to="/cart">
+              <Tooltip title="Cart" aria-label="Cart">
+                <IconButton>
+                  <ShoppingCartOutlinedIcon />
+                </IconButton>
+              </Tooltip>
+            </Link>
+          </div>
         </div>
 
         <div className="navbar__mobileMenu">

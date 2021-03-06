@@ -10,6 +10,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import translate from '../../utils/i18n/translate';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import IconButton from '@material-ui/core/IconButton';
 
 function ProductRow({ title, items }) {
   const translator = (item) =>
