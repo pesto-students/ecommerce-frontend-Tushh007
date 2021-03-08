@@ -4,11 +4,16 @@
   width: 90%;
 }
 
+.productRow__itemsContainer {
+  display: flex;
+  align-items: center;
+}
 .productRow__items {
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 20px;
+  scroll-behavior: smooth;
 }
 
 .productRow__items::-webkit-scrollbar {

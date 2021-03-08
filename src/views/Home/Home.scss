@@ -16,7 +16,7 @@
       'home__categories1 home__categories4 home__categories4';
     @media (max-width: 600px) {
       width: 90%;
-      height: 150vh;
+      height: 185vh;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
       grid-template-areas:
@@ -57,5 +57,22 @@
   }
   .home__products {
     display: flex;
+  }
+
+  .home__shopButton {
+    background-color: #43464e;
+    border: 1px solid #43464e;
+    color: #fff;
+    border-radius: 2px;
+    width: 40%;
+    border: 1px solid;
+    margin-top: 10px;
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .home__tileElement {
+    margin-top: 35vh;
+    margin-left: 3vw;
   }
 }
