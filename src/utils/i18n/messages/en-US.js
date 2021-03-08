@@ -2,9 +2,32 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.ENGLISH]: {
-    'German': 'German',
-    'French': 'French',
-    'English': 'English',
+    'Search Products': 'Search Products',
+    'E-mail': 'E-mail',
+    'Sign-in': 'Sign-in',
+    Password: 'Password',
+    'Create your account': 'Create your account',
+    'or sign-in with:': 'or sign-in with:',
+    Google: 'Google',
+    Facebook: 'Facebook',
+    Phone: 'Phone',
+    'Hello, Guest': 'Hello, Guest',
+    'SHOP NOW': 'SHOP NOW',
+    'PARTY WEAR': 'PARTY WEAR',
+    'CASUAL WEAR': 'CASUAL WEAR',
+    ACCESSORIES: 'ACCESSORIES',
+    FOOTWEAR: 'FOOTWEAR',
+    'Redefine your fashion with these stunning casual wear':
+      'Redefine your fashion with these stunning casual wear',
+    'Sophesticated accessories to make your look and life a paradise.':
+      'Sophesticated accessories to make your look and life a paradise.',
+    'Footwear that makes you comfortable and look good.':
+      'Footwear that makes you comfortable and look good.',
+    'Dress up for parties with the spirit of passion':
+      'Dress up for parties with the spirit of passion',
+    German: 'German',
+    French: 'French',
+    English: 'English',
     'Learn More': 'Learn More',
     'Classic Collection 2021': 'Classic Collection 2021',
     'COLLECTION 2021': 'COLLECTION 2021',

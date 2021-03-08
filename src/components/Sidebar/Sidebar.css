@@ -1,0 +1,11 @@
+.sidebar {
+  /* background: chartreuse; */
+  flex: 0.2;
+  border: 1px solid lightblue;
+  /* color: white; */
+  /* background-color: chartreuse;
+  flex: 0.3;
+  background-color: var(--slack-color);
+  border-top: 1px solid #49274b;
+  max-width: 260px; */
+}

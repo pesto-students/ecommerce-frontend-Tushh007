@@ -72,7 +72,18 @@
   }
 
   .home__tileElement {
-    margin-top: 35vh;
+    margin-top: 10vh;
     margin-left: 3vw;
+  }
+
+  .home__categoryTitle {
+    width: 100px;
+    font-weight: 500;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .home__categoryDescription {
+    width: 70%;
   }
 }
