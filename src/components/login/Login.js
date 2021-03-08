@@ -8,6 +8,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
+import translate from '../../utils/i18n/translate';
 
 import './Login.css';
 
@@ -16,6 +17,9 @@ function Login() {
   const [password, setPassword] = useState('');
   const [open, setOpen] = useState(false);
   const history = useHistory();
+
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
 
   const signIn = (e) => {
     e.preventDefault();
@@ -50,16 +54,16 @@ function Login() {
 
         <div className="login__card">
           <div className="login__container">
-            <h1>Sign-in</h1>
+            <h1>{translator('Sign-in')}</h1>
             <form>
-              <h5>E-mail</h5>
+              <h5>{translator('E-mail')}</h5>
               <input
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
 
-              <h5>Password</h5>
+              <h5>{translator('Password')}</h5>
               <input
                 type="password"
                 value={password}
@@ -67,14 +71,14 @@ function Login() {
               />
 
               <button type="submit" onClick={signIn} className="login__email">
-                Sign In
+                {translator('Sign-in')}
               </button>
             </form>
             <button onClick={register} className="login__register">
-              Create you account
+              {translator('Create your account')}
             </button>
           </div>
-          <p>or sign-in with:</p>
+          <p>{translator('or sign-in with:')}</p>
           <div className="login__options">
             <button
               type="submit"
@@ -82,7 +86,7 @@ function Login() {
               className="login__google btn"
             >
               <EmailIcon />
-              Google
+              {translator('Google')}
             </button>
             <button
               type="submit"
@@ -90,11 +94,11 @@ function Login() {
               className="login__facebook btn"
             >
               <FacebookIcon />
-              Facebook
+              {translator('Facebook')}
             </button>
             <button type="submit" onClick={signIn} className="login__phone btn">
               <PhoneIcon />
-              Phone
+              {translator('Phone')}
             </button>
           </div>
         </div>

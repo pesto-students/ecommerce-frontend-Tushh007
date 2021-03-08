@@ -1,0 +1,5 @@
+.productDeck {
+  flex: 0.8;
+  flex-grow: 1;
+  min-height: 50vh;
+}

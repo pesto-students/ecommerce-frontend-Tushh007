@@ -6,6 +6,10 @@ import Footer from './components/Footer/Footer';
 import Home from './views/Home/Home';
 import Navbar from './components/navbar/Navbar';
 import './App.css';
+import Category from './views/Category/Category';
+import Product from './views/Product/Product';
+import Wishlist from './views/Wishlist/Wishlist';
+import Cart from './views/Cart/Cart';
 
 function App() {
   const [{ locale }] = useStateValue();
@@ -16,12 +20,22 @@ function App() {
           <Switch>
             <Route path="/wishlist">
               <Navbar />
-              <p>wishlist page</p>
+              <Wishlist />
+              <Footer />
+            </Route>
+            <Route path="/category/:categoryName/:productId">
+              <Navbar />
+              <Product />
+              <Footer />
+            </Route>
+            <Route path="/category/:categoryName">
+              <Navbar />
+              <Category />
               <Footer />
             </Route>
             <Route path="/cart">
               <Navbar />
-              <p>cart page</p>
+              <Cart />
               <Footer />
             </Route>
             <Route path="/">

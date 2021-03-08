@@ -3,9 +3,12 @@ import ProductRow from '../../components/ProductRow/ProductRow';
 import { PRODUCTS } from '../../utils/products';
 import Carousel from '../../components/carousel/Carousel';
 import { bannerImages } from './BannerData';
+import translate from '../../utils/i18n/translate';
 import './Home.scss';
 
 const Home = () => {
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
   return (
     <div className="home">
       <Carousel />
@@ -15,7 +18,13 @@ const Home = () => {
           style={{ backgroundImage: `url(${bannerImages[0].img})` }}
         >
           <div className="home__tileElement">
-            <button className="home__shopButton">Shop Now</button>
+            <h1 className="home__categoryTitle">{translator('PARTY WEAR')}</h1>
+            <p className="home__categoryDescription">
+              {translator('Dress up for parties with the spirit of passion')}
+            </p>
+            <button className="home__shopButton">
+              {translator('SHOP NOW')}
+            </button>
           </div>
         </div>
         <div
@@ -23,7 +32,15 @@ const Home = () => {
           style={{ backgroundImage: `url(${bannerImages[1].img})` }}
         >
           <div className="home__tileElement">
-            <button className="home__shopButton">Shop Now</button>
+            <h1 className="home__categoryTitle">{translator('CASUAL WEAR')}</h1>
+            <p className="home__categoryDescription">
+              {translator(
+                'Redefine your fashion with these stunning casual wear'
+              )}
+            </p>
+            <button className="home__shopButton">
+              {translator('SHOP NOW')}
+            </button>
           </div>
         </div>
         <div
@@ -31,7 +48,15 @@ const Home = () => {
           style={{ backgroundImage: `url(${bannerImages[2].img})` }}
         >
           <div className="home__tileElement">
-            <button className="home__shopButton">Shop Now</button>
+            <h1 className="home__categoryTitle">{translator('ACCESSORIES')}</h1>
+            <p className="home__categoryDescription">
+              {translator(
+                'Sophesticated accessories to make your look and life a paradise.'
+              )}
+            </p>
+            <button className="home__shopButton">
+              {translator('SHOP NOW')}
+            </button>
           </div>
         </div>
         <div
@@ -39,7 +64,13 @@ const Home = () => {
           style={{ backgroundImage: `url(${bannerImages[3].img})` }}
         >
           <div className="home__tileElement">
-            <button className="home__shopButton">Shop Now</button>
+            <h1 className="home__categoryTitle">{translator('FOOTWEAR')}</h1>
+            <p className="home__categoryDescription">
+              {translator('Footwear that makes you comfortable and look good.')}
+            </p>
+            <button className="home__shopButton">
+              {translator('SHOP NOW')}
+            </button>
           </div>
         </div>
       </div>

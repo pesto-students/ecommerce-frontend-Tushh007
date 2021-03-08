@@ -188,7 +188,9 @@ const Navbar = () => {
                 </>
               ) : (
                 <>
-                  <span className="navbar__username">Hello, Guest</span>
+                  <span className="navbar__username">
+                    {translator('Hello, Guest')}
+                  </span>
                   <Tooltip title="Login" aria-label="Login">
                     <Login />
                   </Tooltip>

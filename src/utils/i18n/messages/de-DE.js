@@ -2,6 +2,29 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.GERMAN]: {
+    'Search Products': 'Produktsuche',
+    'E-mail': 'Email',
+    'Sign-in': 'Einloggen',
+    Password: 'Passwort',
+    'Create your account': 'Erstelle deinen Account',
+    'or sign-in with:': 'oder melden Sie sich an mit:',
+    Google: 'Google',
+    Facebook: 'Facebook',
+    Phone: 'Telefon',
+    'Hello, Guest': 'Hallo Gast',
+    'SHOP NOW': 'SHOP NOW',
+    'PARTY WEAR': 'PARTY WEAR',
+    'CASUAL WEAR': 'CASUAL WEAR',
+    ACCESSORIES: 'ACCESSORIES',
+    FOOTWEAR: 'FOOTWEAR',
+    'Redefine your fashion with these stunning casual wear':
+      'Redefine your fashion with these stunning casual wear',
+    'Sophesticated accessories to make your look and life a paradise.':
+      'Sophesticated accessories to make your look and life a paradise.',
+    'Footwear that makes you comfortable and look good.':
+      'Footwear that makes you comfortable and look good.',
+    'Dress up for parties with the spirit of passion':
+      'Dress up for parties with the spirit of passion',
     German: 'Deutsche',
     French: 'Französisch',
     English: 'Englisch',
