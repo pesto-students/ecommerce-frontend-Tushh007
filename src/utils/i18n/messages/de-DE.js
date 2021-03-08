@@ -12,19 +12,19 @@ export default {
     Facebook: 'Facebook',
     Phone: 'Telefon',
     'Hello, Guest': 'Hallo Gast',
-    'SHOP NOW': 'SHOP NOW',
-    'PARTY WEAR': 'PARTY WEAR',
-    'CASUAL WEAR': 'CASUAL WEAR',
-    ACCESSORIES: 'ACCESSORIES',
-    FOOTWEAR: 'FOOTWEAR',
+    'SHOP NOW': 'JETZT EINKAUFEN',
+    'PARTY WEAR': 'Party tragen',
+    'CASUAL WEAR': 'FREIZEITKLEIDUNG',
+    ACCESSORIES: 'ZUBEHÖR',
+    FOOTWEAR: 'SCHUHWERK',
     'Redefine your fashion with these stunning casual wear':
-      'Redefine your fashion with these stunning casual wear',
+      'Definieren Sie Ihre Mode mit dieser atemberaubenden Freizeitkleidung neu',
     'Sophesticated accessories to make your look and life a paradise.':
-      'Sophesticated accessories to make your look and life a paradise.',
+      'Anspruchsvolle Accessoires machen Ihren Look und Ihr Leben zu einem Paradies.',
     'Footwear that makes you comfortable and look good.':
-      'Footwear that makes you comfortable and look good.',
+      'Schuhe, die Sie bequem machen und gut aussehen.',
     'Dress up for parties with the spirit of passion':
-      'Dress up for parties with the spirit of passion',
+      'Dress up für Partys mit dem Geist der Leidenschaft',
     German: 'Deutsche',
     French: 'Französisch',
     English: 'Englisch',

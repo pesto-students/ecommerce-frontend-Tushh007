@@ -1,0 +1,17 @@
+.product {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  min-height: 50vh;
+}
+
+.productDeck__trail {
+  display: flex;
+  align-items: center;
+}
+
+.productDeck__trailElement {
+  padding: 0 5px;
+  font-weight: 500;
+  font-size: 12px;
+}

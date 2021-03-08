@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductRow from '../../components/ProductRow/ProductRow';
-import { PRODUCTS } from '../../utils/products';
 import Carousel from '../../components/carousel/Carousel';
 import { bannerImages } from './BannerData';
 import translate from '../../utils/i18n/translate';
 import { useHistory } from 'react-router-dom';
 import './Home.scss';
+import { FEATURED_PRODUCTS } from '../../utils/fakeData';
 
 const Home = () => {
   const history = useHistory();
@@ -89,7 +89,7 @@ const Home = () => {
         </div>
       </div>
       <div className="products">
-        <ProductRow title="Featured Products" items={PRODUCTS} />
+        <ProductRow title="Featured Products" items={FEATURED_PRODUCTS} />
       </div>
     </div>
   );
