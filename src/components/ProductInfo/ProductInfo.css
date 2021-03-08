@@ -13,3 +13,11 @@
   border: 1px solid;
   margin-top: 10px;
 }
+
+.productInfo__price {
+  padding: 60px 0;
+}
+
+.productInfo__description {
+  padding: 100px 0;
+}

@@ -9,7 +9,9 @@ function ProductInfo({ product }) {
     <div className="productInfo">
       <div className="productInfo__summary">
         <h1 className="productInfo__title">{product.name}</h1>
-        <strong className="productInfo__title">&#8377; {product.price}</strong>
+        <span className="productInfo__price">
+          <strong>&#8377; {product.price}</strong>
+        </span>
         <p className="productInfo__description">
           The product information is to be regarded as a document which contains
           information sufficient to ensure safe and effective use of the drug
