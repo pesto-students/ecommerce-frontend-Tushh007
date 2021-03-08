@@ -1,0 +1,59 @@
+@import '../colors';
+.carousel {
+  width: 90%;
+  height: 600px;
+  margin: auto;
+  background-color: black;
+  font-family: 'Raleway', sans-serif;
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 50vh;
+  }
+  .carousel__inner {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    .carousel__inner__left {
+      flex: 5%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0);
+      display: grid;
+      place-items: center;
+    }
+    .carousel__inner__center {
+      flex: 90%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .carousel__content {
+        .carousel__title {
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+        .carousel__button {
+          padding: 0.6rem;
+          background-color: $orange;
+          border: none;
+          color: white;
+          outline-width: 0;
+          cursor: pointer;
+          transition: padding 0.5s;
+          &:hover {
+            padding-left: 0.8rem;
+            padding-right: 0.8rem;
+          }
+        }
+      }
+    }
+    .carousel__inner__right {
+      flex: 5%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0);
+      display: grid;
+      place-items: center;
+    }
+  }
+}

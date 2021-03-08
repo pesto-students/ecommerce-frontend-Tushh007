@@ -1,0 +1,78 @@
+.home {
+  .home__categories {
+    height: 90vh;
+    width: 89vw;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    grid-template-areas:
+      'home__categories1 home__categories2 home__categories3'
+      'home__categories1 home__categories2 home__categories3'
+      'home__categories1 home__categories4 home__categories4';
+    @media (max-width: 600px) {
+      width: 90%;
+      height: 185vh;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+        'home__categories1'
+        'home__categories2'
+        'home__categories3'
+        'home__categories4';
+      margin-bottom: 50px;
+    }
+    .home__categories1 {
+      grid-area: home__categories1;
+      background-color: blue;
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .home__categories2 {
+      grid-area: home__categories2;
+      background-color: rgb(0, 255, 115);
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .home__categories3 {
+      grid-area: home__categories3;
+      background-color: rgb(92, 26, 136);
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .home__categories4 {
+      grid-area: home__categories4;
+      background-color: rgb(179, 144, 49);
+      background-position: left;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .home__products {
+    display: flex;
+  }
+
+  .home__shopButton {
+    background-color: #43464e;
+    border: 1px solid #43464e;
+    color: #fff;
+    border-radius: 2px;
+    width: 40%;
+    border: 1px solid;
+    margin-top: 10px;
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .home__tileElement {
+    margin-top: 35vh;
+    margin-left: 3vw;
+  }
+}
