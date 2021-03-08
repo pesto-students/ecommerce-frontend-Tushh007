@@ -5,34 +5,35 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import translate from '../../../utils/i18n/translate';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import translate from '../../../utils/i18n/translate';
 
 import './ProductDeck.css';
 
 function ProductDeck({ category, products }) {
   const history = useHistory();
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     console.log(category);
   }, [category]);
 
-  const translator = (item) =>
-    translate(item) === item ? item : translate(item);
-
   return (
     <div className="productDeck">
       <div className="productDeck__trail">
         <Link to="/">
-          <p className="productDeck__trailElement">HOME</p>
+          <p className="productDeck__trailElement">{translator('HOME')}</p>
         </Link>
         <p className="productDeck__trailElement">{'>'}</p>
 
-        <p className="productDeck__trailElement">{category.toUpperCase()}</p>
+        <p className="productDeck__trailElement">
+          {translator(category.toUpperCase())}
+        </p>
       </div>
 
       <div className="productDeck__products">

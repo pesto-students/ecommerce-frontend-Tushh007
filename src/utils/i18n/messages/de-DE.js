@@ -2,6 +2,27 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.GERMAN]: {
+    "L'Oreal Paris Revitalift Crystal Micro-Essence Face Serum 22 ml":
+      "L'Oreal Paris Revitalift Kristall Mikro-Essenz Gesichtsserum 22 ml",
+    'DressBerry Women Peach-Coloured Solid Flats':
+      'DressBerry Women Pfirsichfarbene feste Wohnungen',
+    'ZAPATOZ Women White Sneakers': 'ZAPATOZ Damen Weiße Turnschuhe',
+    'Crocs Unisex Navy Blue Solid Bayaband Clogs':
+      'Crocs Unisex Marineblau Solid Bayaband Clogs',
+    'SASSAFRAS Black & Pink Printed Wrap Dress':
+      'SASSAFRAS Schwarz & Pink bedrucktes Wickelkleid',
+    'Tokyo Talkies Navy Polka Dot Belted Shirt Dress':
+      'Tokyo Talkies Navy Polka Dot Hemdkleid mit Gürtel',
+    'SASSAFRAS Women Maroon Solid Tiered Maxi Dress':
+      'SASSAFRAS Damen Maroon Solid Tiered Maxikleid',
+    'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s':
+      'Daniel Klein Premium Damen Silber getönte Zifferblattuhr DK11138-2s',
+    'MANGO Burgundy Solid Tote Bag': 'MANGO Burgund Solid Einkaufstasche',
+    HOME: 'ZUHAUSE',
+    Filter: 'Filter',
+    Filters: 'Filter',
+    Category: 'Kategorie',
+    Categories: 'Kategorie',
     'Search Products': 'Produktsuche',
     'E-mail': 'Email',
     'Sign-in': 'Einloggen',
@@ -13,7 +34,7 @@ export default {
     Phone: 'Telefon',
     'Hello, Guest': 'Hallo Gast',
     'SHOP NOW': 'JETZT EINKAUFEN',
-    'PARTY WEAR': 'Party tragen',
+    'PARTY WEAR': 'PARTY TRAGEN',
     'CASUAL WEAR': 'FREIZEITKLEIDUNG',
     ACCESSORIES: 'ZUBEHÖR',
     FOOTWEAR: 'SCHUHWERK',
