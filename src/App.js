@@ -28,7 +28,7 @@ function App() {
               <Product />
               <Footer />
             </Route>
-            <Route path="/category/:categoryName">
+            <Route path="/category/:category">
               <Navbar />
               <Category />
               <Footer />

@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
 }
+
 .productRow__items {
   display: flex;
   overflow-y: hidden;

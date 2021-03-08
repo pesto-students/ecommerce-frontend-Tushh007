@@ -2,6 +2,28 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.ENGLISH]: {
+    "L'Oreal Paris Revitalift Crystal Micro-Essence Face Serum 22 ml":
+      "L'Oreal Paris Revitalift Crystal Micro-Essence Face Serum 22 ml",
+    'DressBerry Women Peach-Coloured Solid Flats':
+      'DressBerry Women Peach-Coloured Solid Flats',
+    'ZAPATOZ Women White Sneakers':
+      'Crocs Unisex Navy Blue Solid Bayaband Clogs',
+    'Crocs Unisex Navy Blue Solid Bayaband Clogs':
+      'Crocs Unisex Navy Blue Solid Bayaband Clogs',
+    'SASSAFRAS Black & Pink Printed Wrap Dress':
+      'SASSAFRAS Black & Pink Printed Wrap Dress',
+    'Tokyo Talkies Navy Polka Dot Belted Shirt Dress':
+      'Tokyo Talkies Navy Polka Dot Belted Shirt Dress',
+    'SASSAFRAS Women Maroon Solid Tiered Maxi Dress':
+      'SASSAFRAS Women Maroon Solid Tiered Maxi Dress',
+    'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s':
+      'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
+    'MANGO Burgundy Solid Tote Bag': 'MANGO Burgundy Solid Tote Bag',
+    HOME: 'DOMICILE',
+    Filter: 'Filter',
+    Filters: 'Filters',
+    Category: 'Category',
+    Categories: 'Categories',
     'Search Products': 'Search Products',
     'E-mail': 'E-mail',
     'Sign-in': 'Sign-in',

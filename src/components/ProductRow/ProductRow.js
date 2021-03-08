@@ -11,8 +11,10 @@ import translate from '../../utils/i18n/translate';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import { useHistory } from 'react-router-dom';
 
 function ProductRow({ title, items }) {
+  const history = useHistory();
   const translator = (item) =>
     translate(item) === item ? item : translate(item);
 
@@ -51,7 +53,14 @@ function ProductRow({ title, items }) {
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     <div className="productRow__itemWishlist">
-                      <strong>{translator(item.name)}</strong>
+                      <strong
+                        onClick={(e) =>
+                          history.push(`/category/${item.category}/${item.id}`)
+                        }
+                      >
+                        {translator(item.name)}
+                      </strong>
+
                       <FavoriteBorderIcon fontSize="large" />
                     </div>
                   </Typography>

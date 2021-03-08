@@ -2,6 +2,26 @@ import { LOCALES } from '../locales';
 
 export default {
   [LOCALES.FRENCH]: {
+    "L'Oreal Paris Revitalift Crystal Micro-Essence Face Serum 22 ml":
+      "L'Oreal Paris Revitalift Crystal Micro-Essence Sérum Visage 22 ml",
+    'DressBerry Women Peach-Coloured Solid Flats':
+      'DressBerry Femmes Appartements unis couleur pêche',
+    'ZAPATOZ Women White Sneakers': 'ZAPATOZ Femmes Baskets Blanches',
+    'Crocs Unisex Navy Blue Solid Bayaband Clogs':
+      'Sabots Crocs Unisexe Bleu Marine Solid Bayaband',
+    'SASSAFRAS Black & Pink Printed Wrap Dress':
+      'Robe portefeuille imprimée noire et rose SASSAFRAS',
+    'Tokyo Talkies Navy Polka Dot Belted Shirt Dress':
+      'Tokyo Talkies - Robe chemise ceinturée à pois bleu marine',
+    'SASSAFRAS Women Maroon Solid Tiered Maxi Dress':
+      'SASSAFRAS Robe Longue Marron Solide',
+    'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s':
+      'Daniel Klein Premium Montre Femme Cadran Argenté DK11138-2s',
+    'MANGO Burgundy Solid Tote Bag': 'Sac fourre-tout uni bordeaux MANGO',
+    Filter: 'Filtre',
+    Filters: 'Filtres',
+    Category: 'Catégorie',
+    Categories: 'Catégories',
     'Search Products': 'Recherche de produits',
     'E-mail': 'E-mail',
     'Sign-in': `S'identifier`,

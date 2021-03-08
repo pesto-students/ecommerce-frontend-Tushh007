@@ -1,12 +1,14 @@
 import React from 'react';
 import ProductRow from '../../components/ProductRow/ProductRow';
-import { PRODUCTS } from '../../utils/products';
 import Carousel from '../../components/carousel/Carousel';
 import { bannerImages } from './BannerData';
 import translate from '../../utils/i18n/translate';
+import { useHistory } from 'react-router-dom';
 import './Home.scss';
+import { FEATURED_PRODUCTS } from '../../utils/fakeData';
 
 const Home = () => {
+  const history = useHistory();
   const translator = (item) =>
     translate(item) === item ? item : translate(item);
   return (
@@ -22,7 +24,10 @@ const Home = () => {
             <p className="home__categoryDescription">
               {translator('Dress up for parties with the spirit of passion')}
             </p>
-            <button className="home__shopButton">
+            <button
+              className="home__shopButton"
+              onClick={(e) => history.push('/category/party%20wear')}
+            >
               {translator('SHOP NOW')}
             </button>
           </div>
@@ -38,7 +43,10 @@ const Home = () => {
                 'Redefine your fashion with these stunning casual wear'
               )}
             </p>
-            <button className="home__shopButton">
+            <button
+              className="home__shopButton"
+              onClick={(e) => history.push('/category/casual%20wear')}
+            >
               {translator('SHOP NOW')}
             </button>
           </div>
@@ -54,7 +62,10 @@ const Home = () => {
                 'Sophesticated accessories to make your look and life a paradise.'
               )}
             </p>
-            <button className="home__shopButton">
+            <button
+              className="home__shopButton"
+              onClick={(e) => history.push('/category/accessories')}
+            >
               {translator('SHOP NOW')}
             </button>
           </div>
@@ -68,14 +79,17 @@ const Home = () => {
             <p className="home__categoryDescription">
               {translator('Footwear that makes you comfortable and look good.')}
             </p>
-            <button className="home__shopButton">
+            <button
+              className="home__shopButton"
+              onClick={(e) => history.push('/category/footwear')}
+            >
               {translator('SHOP NOW')}
             </button>
           </div>
         </div>
       </div>
       <div className="products">
-        <ProductRow title="Featured Products" items={PRODUCTS} />
+        <ProductRow title="Featured Products" items={FEATURED_PRODUCTS} />
       </div>
     </div>
   );
