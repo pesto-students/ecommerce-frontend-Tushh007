@@ -1,17 +1,21 @@
 .product {
   width: 90%;
   margin: 0 auto;
-  display: flex;
-  min-height: 50vh;
 }
 
-.productDeck__trail {
+.product__trail {
   display: flex;
   align-items: center;
+  margin-left: 10px;
 }
 
-.productDeck__trailElement {
+.product__trailElement {
   padding: 0 5px;
   font-weight: 500;
   font-size: 12px;
+}
+
+.product__details {
+  margin-left: 15px;
+  display: flex;
 }

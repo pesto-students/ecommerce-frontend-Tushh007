@@ -109,7 +109,7 @@ export const FEATURED_PRODUCTS = [
   },
 ];
 
-export const CASUAL_WEAR = [
+const CASUAL_WEAR = [
   {
     id: 1,
     name: 'Tinny Three Quarter Sleeve Dress',
@@ -220,7 +220,7 @@ export const CASUAL_WEAR = [
   },
 ];
 
-export const PARTY_WEAR = [
+const PARTY_WEAR = [
   {
     id: 13,
     name: 'SASSAFRAS Black & Pink Printed Wrap Dress',
@@ -331,7 +331,7 @@ export const PARTY_WEAR = [
   },
 ];
 
-export const ACCESSORIES = [
+const ACCESSORIES = [
   {
     id: 25,
     name: 'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
@@ -445,7 +445,7 @@ export const ACCESSORIES = [
   },
 ];
 
-export const FOOTWEAR = [
+const FOOTWEAR = [
   {
     id: 37,
     name: `DressBerry Women Peach-Coloured Solid Flats`,
@@ -555,3 +555,13 @@ export const FOOTWEAR = [
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11567688/2020/3/20/1f4d4b99-8a35-48af-87da-f966a2c23b5a1584703400474-Crocs-Unisex-Navy-Blue-Sandals-2211584703399157-1.jpg',
   },
 ];
+
+const FAKEDATA = {
+  FEATURED_PRODUCTS: FEATURED_PRODUCTS,
+  PARTY_WEAR: PARTY_WEAR,
+  CASUAL_WEAR: CASUAL_WEAR,
+  FOOTWEAR: FOOTWEAR,
+  ACCESSORIES: ACCESSORIES,
+};
+
+export default FAKEDATA;

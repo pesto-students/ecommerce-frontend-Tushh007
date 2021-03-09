@@ -5,7 +5,7 @@ import { bannerImages } from './BannerData';
 import translate from '../../utils/i18n/translate';
 import { useHistory } from 'react-router-dom';
 import './Home.scss';
-import { FEATURED_PRODUCTS } from '../../utils/fakeData';
+import FAKEDATA from '../../utils/fakeData';
 
 const Home = () => {
   const history = useHistory();
@@ -89,7 +89,10 @@ const Home = () => {
         </div>
       </div>
       <div className="products">
-        <ProductRow title="Featured Products" items={FEATURED_PRODUCTS} />
+        <ProductRow
+          title="Featured Products"
+          items={FAKEDATA['FEATURED_PRODUCTS']}
+        />
       </div>
     </div>
   );

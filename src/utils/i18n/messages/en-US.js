@@ -19,7 +19,7 @@ export default {
     'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s':
       'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
     'MANGO Burgundy Solid Tote Bag': 'MANGO Burgundy Solid Tote Bag',
-    HOME: 'DOMICILE',
+    HOME: 'HOME',
     Filter: 'Filter',
     Filters: 'Filters',
     Category: 'Category',
