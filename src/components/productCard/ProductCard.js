@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./ProductCard.scss";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
@@ -30,7 +31,6 @@ const ProductCard = ({ product }) => {
           <Tooltip title={toTitleCase(product.name)}>
             <p>{productName}</p>
           </Tooltip>
-
           <IconButton>
             <FavoriteBorderIcon />
           </IconButton>
@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
           <div className="priceRating">
             <p>₹ {product.price}</p>
             <div className="Rating">
-              <ProductRating />
+              <ProductRating rating={rating} />
             </div>
           </div>
           <div className="Cart">

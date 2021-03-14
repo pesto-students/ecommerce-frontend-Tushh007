@@ -98,17 +98,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <ProductCard />
 
-      <ProductCard />
-
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      <ProductRow
+        title="Featured Products"
+        items={FAKEDATA['FEATURED_PRODUCTS']}
+      />
     </div>
   );
 };
