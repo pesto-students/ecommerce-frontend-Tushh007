@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import Search from '../Search/Search';
-import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Badge from '@material-ui/core/Badge';
-import Login from '../login/Login';
-import './Navbar.scss';
-import translate from '../../utils/i18n/translate';
-import { useStateValue } from '../../store/StoreProvider';
+import React, { useState } from "react";
+import IconButton from "@material-ui/core/IconButton";
+import Search from "../Search/Search";
+import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Badge from "@material-ui/core/Badge";
+import Login from "../Login/Login";
+import "./Navbar.scss";
+import translate from "../../utils/i18n/translate";
+import { useStateValue } from "../../store/StoreProvider";
 
-import Tooltip from '@material-ui/core/Tooltip';
-import LanguageIcon from '@material-ui/icons/Language';
-import { LOCALES } from '../../utils/i18n';
+import Tooltip from "@material-ui/core/Tooltip";
+import LanguageIcon from "@material-ui/icons/Language";
+import { LOCALES } from "../../utils/i18n";
 
 const Navbar = () => {
   const [{ locale, user }, dispatch] = useStateValue();
@@ -40,7 +40,7 @@ const Navbar = () => {
 
   const handleLanguageMenuClose = (locale) => {
     dispatch({
-      type: 'SET_LOCALE',
+      type: "SET_LOCALE",
       locale: locale,
     });
     setLanguageAnchorEl(null);
@@ -52,25 +52,25 @@ const Navbar = () => {
   };
 
   // Language Icon Logic
-  const languageId = 'languageMenu';
+  const languageId = "languageMenu";
   const renderLanguageMenu = (
     <Menu
       anchorEl={languageAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={languageId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isLanguageMenuOpen}
       onClose={handleLanguageMenuClose}
     >
       <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.ENGLISH)}>
-        {translator('English')}
+        {translator("English")}
       </MenuItem>
       <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.GERMAN)}>
-        {translator('German')}
+        {translator("German")}
       </MenuItem>
       <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.FRENCH)}>
-        {translator('French')}
+        {translator("French")}
       </MenuItem>
     </Menu>
   );
@@ -102,14 +102,14 @@ const Navbar = () => {
     setAnchorEl(e.currentTarget);
   };
 
-  const menuId = 'desktopProfileMenu';
+  const menuId = "desktopProfileMenu";
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
@@ -120,14 +120,14 @@ const Navbar = () => {
     </Menu>
   );
 
-  const mobileMenuId = 'mobileProfileMenu';
+  const mobileMenuId = "mobileProfileMenu";
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
