@@ -158,8 +158,8 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h2 className="navbarLogo">Little Tags</h2>
-      <h2 className="navbarMobileLogo">LT</h2>
+      <h2 className="navbarLogo">TagiFy</h2>
+      <h2 className="navbarMobileLogo">TF</h2>
       <div className="navbar_right">
         <Search />
         <div className="navbar_desktopMenu">
