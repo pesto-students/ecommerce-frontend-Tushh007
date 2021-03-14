@@ -20,8 +20,6 @@ const ProductCard = ({ product }) => {
 
   let productName = getProductName(product?.name, 20);
 
-  console.log(product);
-
   return (
     <div className="ProductCard">
       <div className="ImgContainer">

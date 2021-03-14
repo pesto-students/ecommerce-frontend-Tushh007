@@ -20,10 +20,7 @@ function Category() {
   return (
     <div className="category">
       <Sidebar />
-      <ProductDeck
-        category={category}
-        products={FAKEDATA['FEATURED_PRODUCTS']}
-      />
+      <ProductDeck category={category} products={products} />
     </div>
   );
 }

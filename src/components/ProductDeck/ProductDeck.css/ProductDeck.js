@@ -13,7 +13,6 @@ function ProductDeck({ category, products }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(category);
   }, [category]);
 
   return (

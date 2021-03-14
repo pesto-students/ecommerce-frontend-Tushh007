@@ -21,8 +21,6 @@ function Product() {
     setProduct(product);
   }, [category, productId]);
 
-  console.log(product);
-
   return (
     <div className="product">
       <div className="product__trail">
