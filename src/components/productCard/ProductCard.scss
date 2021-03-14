@@ -2,16 +2,9 @@
 .ProductCard {
   max-width: 224px;
   margin: 20px;
-  transition: max-width 0.3s;
-  &:hover {
-    max-width: 230px;
-  }
   .ImgContainer {
     max-width: inherit;
     object-fit: contain;
-    &:hover {
-      max-width: 234px;
-    }
     img {
       width: 100%;
     }
@@ -23,6 +16,7 @@
       justify-content: space-between;
       p {
         text-align: left;
+        cursor: pointer;
       }
     }
     .productBuyContainer {

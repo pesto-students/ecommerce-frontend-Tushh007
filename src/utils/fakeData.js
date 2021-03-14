@@ -6,7 +6,7 @@ export const FEATURED_PRODUCTS = [
     rating: '4.7',
     category: 'casual wear',
     imageUrl:
-      'https://media.debenhams.com/i/debenhams/350010660943/navy_stripe_print_sleeveless_deana_maxi_dress.jpg?w=640&h=640&fmt=jpg',
+      'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
   {
     id: 15,
@@ -42,7 +42,7 @@ export const FEATURED_PRODUCTS = [
     rating: '4.7',
     category: 'casual wear',
     imageUrl:
-      'https://media.debenhams.com/i/debenhams/350010660943/navy_stripe_print_sleeveless_deana_maxi_dress.jpg?w=640&h=640&fmt=jpg',
+      'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
   {
     id: 15,
@@ -78,7 +78,7 @@ export const FEATURED_PRODUCTS = [
     rating: '4.7',
     category: 'casual wear',
     imageUrl:
-      'https://media.debenhams.com/i/debenhams/350010660943/navy_stripe_print_sleeveless_deana_maxi_dress.jpg?w=640&h=640&fmt=jpg',
+      'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
   {
     id: 15,
@@ -135,7 +135,7 @@ const CASUAL_WEAR = [
     rating: '4.7',
     category: 'casual wear',
     imageUrl:
-      'https://media.debenhams.com/i/debenhams/350010660943/navy_stripe_print_sleeveless_deana_maxi_dress.jpg?w=640&h=640&fmt=jpg',
+      'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
   {
     id: 4,
@@ -162,7 +162,7 @@ const CASUAL_WEAR = [
     rating: '4.7',
     category: 'casual wear',
     imageUrl:
-      'https://media.debenhams.com/i/debenhams/350010660943/navy_stripe_print_sleeveless_deana_maxi_dress.jpg?w=640&h=640&fmt=jpg',
+      'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
   {
     id: 7,
@@ -189,7 +189,7 @@ const CASUAL_WEAR = [
     rating: '4.7',
     category: 'casual wear',
     imageUrl:
-      'https://media.debenhams.com/i/debenhams/350010660943/navy_stripe_print_sleeveless_deana_maxi_dress.jpg?w=640&h=640&fmt=jpg',
+      'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
   {
     id: 10,
@@ -216,7 +216,7 @@ const CASUAL_WEAR = [
     rating: '4.7',
     category: 'casual wear',
     imageUrl:
-      'https://media.debenhams.com/i/debenhams/350010660943/navy_stripe_print_sleeveless_deana_maxi_dress.jpg?w=640&h=640&fmt=jpg',
+      'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
 ];
 

@@ -8,7 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Badge from '@material-ui/core/Badge';
-import Login from '../Login/Login';
+import Login from '../login/Login';
 import './Navbar.scss';
 import translate from '../../utils/i18n/translate';
 import { useStateValue } from '../../store/StoreProvider';

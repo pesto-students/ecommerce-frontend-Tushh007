@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ProductRow.css';
+import './ProductRow.scss';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
