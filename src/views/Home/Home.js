@@ -98,6 +98,11 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <ProductRow
+        title="Featured Products"
+        items={FAKEDATA['FEATURED_PRODUCTS']}
+      />
     </div>
   );
 };

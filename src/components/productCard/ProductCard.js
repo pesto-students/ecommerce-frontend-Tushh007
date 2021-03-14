@@ -20,6 +20,8 @@ const ProductCard = ({ product }) => {
 
   let productName = getProductName(product?.name, 20);
 
+  console.log(product);
+
   return (
     <div className="ProductCard">
       <div className="ImgContainer">
@@ -30,7 +32,6 @@ const ProductCard = ({ product }) => {
           <Tooltip title={toTitleCase(product?.name)}>
             <p>{productName}</p>
           </Tooltip>
-
           <IconButton>
             <FavoriteBorderIcon />
           </IconButton>
@@ -39,7 +40,7 @@ const ProductCard = ({ product }) => {
           <div className="priceRating">
             <p>₹ {product?.price}</p>
             <div className="Rating">
-              <ProductRating />
+              <ProductRating rating={product?.rating} />
             </div>
           </div>
           <div className="Cart">

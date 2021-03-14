@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { useHistory } from 'react-router-dom';
+import ProductCard from '../productCard/ProductCard';
 
 function ProductRow({ title, items }) {
   const history = useHistory();
@@ -38,49 +39,50 @@ function ProductRow({ title, items }) {
 
         <div className="productRow__items">
           {items.map((item) => (
-            <Card
-              className="productRow__item"
-              style={{ border: 'none', boxShadow: 'none' }}
-            >
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="340"
-                  image={item.imageUrl}
-                  title={translator(item.name)}
-                  alt={translator(item.name)}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    <div className="productRow__itemWishlist">
-                      <strong
-                        onClick={(e) =>
-                          history.push(`/category/${item.category}/${item.id}`)
-                        }
-                      >
-                        {translator(item.name)}
-                      </strong>
+            <ProductCard product={item} />
+            // <Card
+            //   className="productRow__item"
+            //   style={{ border: 'none', boxShadow: 'none' }}
+            // >
+            //   <CardActionArea>
+            //     <CardMedia
+            //       component="img"
+            //       height="340"
+            //       image={item.imageUrl}
+            //       title={translator(item.name)}
+            //       alt={translator(item.name)}
+            //     />
+            //     <CardContent>
+            //       <Typography gutterBottom variant="h5" component="h2">
+            //         <div className="productRow__itemWishlist">
+            //           <strong
+            //             onClick={(e) =>
+            //               history.push(`/category/${item.category}/${item.id}`)
+            //             }
+            //           >
+            //             {translator(item.name)}
+            //           </strong>
 
-                      <FavoriteBorderIcon fontSize="large" />
-                    </div>
-                  </Typography>
+            //           <FavoriteBorderIcon fontSize="large" />
+            //         </div>
+            //       </Typography>
 
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    <div className="productRow__itemCart">
-                      <strong>&#8377; {item.price}</strong>
-                      <ShoppingCartIcon
-                        className="productRow__icon"
-                        fontSize="large"
-                      />
-                    </div>
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+            //       <Typography
+            //         variant="body2"
+            //         color="textSecondary"
+            //         component="p"
+            //       >
+            //         <div className="productRow__itemCart">
+            //           <strong>&#8377; {item.price}</strong>
+            //           <ShoppingCartIcon
+            //             className="productRow__icon"
+            //             fontSize="large"
+            //           />
+            //         </div>
+            //       </Typography>
+            //     </CardContent>
+            //   </CardActionArea>
+            // </Card>
           ))}
         </div>
         <div className="productRow__leftButton" onClick={handleNextClick}>
