@@ -6,8 +6,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Cart from '../../assets/img/icons/cart.svg';
 import ProductRating from '../ProductRating/ProductRating';
 import Tooltip from '@material-ui/core/Tooltip';
+import { useStateValue } from '../../store/StoreProvider';
 
 const ProductCard = ({ product }) => {
+  const [{ user }] = useStateValue();
   const history = useHistory();
 
   const renderProduct = (e) => {
@@ -38,9 +40,13 @@ const ProductCard = ({ product }) => {
           <Tooltip title={toTitleCase(product?.name)}>
             <p onClick={(e) => renderProduct(e)}>{productName}</p>
           </Tooltip>
-          <IconButton>
-            <FavoriteBorderIcon />
-          </IconButton>
+          {user ? (
+            <IconButton>
+              <FavoriteBorderIcon />
+            </IconButton>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="productBuyContainer">
           <div className="priceRating">

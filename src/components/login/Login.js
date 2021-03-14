@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -8,6 +8,12 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import GoogleIcon from '../../assets/img/icons/google.svg';
 import FacebookButton from '../../assets/img/icons/facebook.svg';
+
+import { Link, useHistory } from 'react-router-dom';
+import { auth } from '../../utils/firebase';
+
+import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
+import IconButton from '@material-ui/core/IconButton';
 
 import './Login.scss';
 
@@ -58,13 +64,50 @@ const StyledTextField = withStyles({
   },
 })(TextField);
 
-const Login = ({ open, setOpen }) => {
+const Login = () => {
+  const history = useHistory();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [open, setOpen] = useState(false);
+
+  const signIn = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push('/');
+      })
+      .catch((error) => alert(error.message));
+  };
+
+  const register = (e) => {
+    e.preventDefault();
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+        if (auth) {
+          history.push('/');
+        }
+      })
+      .catch((error) => alert(error.message));
+  };
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <div className="login">
+      <div className="login__icon">
+        <IconButton onClick={handleClickOpen}>
+          <PersonOutlineOutlinedIcon />
+        </IconButton>
+      </div>
       <StyledDialog
         open={open}
         onClose={handleClose}
@@ -83,6 +126,8 @@ const Login = ({ open, setOpen }) => {
             label="Email"
             type="email"
             variant="outlined"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             fullWidth
           />
           <StyledTextField
@@ -91,9 +136,12 @@ const Login = ({ open, setOpen }) => {
             label="Password"
             type="password"
             variant="outlined"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             fullWidth
           />
-          <StyledButton>Login</StyledButton>
+          <StyledButton onClick={signIn}>Login</StyledButton>
+          <StyledButton onClick={register}>Register</StyledButton>
           <hr />
           <div className="SocialLogin">
             <button className="GoogleButton">
