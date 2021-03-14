@@ -98,17 +98,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <ProductCard />
-
-      <ProductCard />
-
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
     </div>
   );
 };
