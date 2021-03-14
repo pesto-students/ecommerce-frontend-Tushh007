@@ -10,11 +10,18 @@ function Category() {
   const { category } = useParams();
 
   useEffect(() => {
+    console.log(category);
     if (category === 'party wear') setProducts(FAKEDATA['PARTY_WEAR']);
     else if (category === 'casual wear') setProducts(FAKEDATA['CASUAL_WEAR']);
     else if (category === 'accessories') setProducts(FAKEDATA['ACCESSORIES']);
     else if (category === 'footwear') setProducts(FAKEDATA['FOOTWEAR']);
-    else console.log('no more categories');
+    else {
+      setProducts(
+        FAKEDATA['ALL_PRODUCTS'].filter((product) =>
+          product.name.toLowerCase().includes(category.toLowerCase())
+        )
+      );
+    }
   }, [category]);
 
   return (

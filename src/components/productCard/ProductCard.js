@@ -1,11 +1,19 @@
 import React from 'react';
 import './ProductCard.scss';
+import { useHistory } from 'react-router-dom';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from '@material-ui/core/IconButton';
 import Cart from '../../assets/img/icons/cart.svg';
 import ProductRating from '../ProductRating/ProductRating';
 import Tooltip from '@material-ui/core/Tooltip';
+
 const ProductCard = ({ product }) => {
+  const history = useHistory();
+
+  const renderProduct = (e) => {
+    history.push(`/${product?.category}/${product.name}/${product?.id}`);
+  };
+
   function toTitleCase(str) {
     return str?.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -28,7 +36,7 @@ const ProductCard = ({ product }) => {
       <div className="ProductDetailContainer">
         <div className="ProductContent">
           <Tooltip title={toTitleCase(product?.name)}>
-            <p>{productName}</p>
+            <p onClick={(e) => renderProduct(e)}>{productName}</p>
           </Tooltip>
           <IconButton>
             <FavoriteBorderIcon />

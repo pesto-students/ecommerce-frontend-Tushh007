@@ -23,12 +23,12 @@ function App() {
               <Wishlist />
               <Footer />
             </Route>
-            <Route path="/category/:category/:productId">
+            <Route path="/:category/:productName/:productId">
               <Navbar />
               <Product />
               <Footer />
             </Route>
-            <Route path="/category/:category">
+            <Route path="/:category">
               <Navbar />
               <Category />
               <Footer />

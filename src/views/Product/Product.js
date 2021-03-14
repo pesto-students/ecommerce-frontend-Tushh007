@@ -19,6 +19,7 @@ function Product() {
     const data = FAKEDATA[category.toUpperCase().replace(' ', '_')];
     const product = data.find((data) => data.id == productId);
     setProduct(product);
+    window.scrollTo(0, 0);
   }, [category, productId]);
 
   return (
@@ -29,7 +30,7 @@ function Product() {
         </Link>
         <p className="product__trailElement">{'>'}</p>
 
-        <Link to={`/category/${category}`}>
+        <Link to={`/${category}`}>
           <p className="product__trailElement">
             {translator(category.toUpperCase())}
           </p>

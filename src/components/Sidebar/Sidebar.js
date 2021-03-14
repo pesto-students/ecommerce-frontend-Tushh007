@@ -13,22 +13,22 @@ function Sidebar() {
         <h5>{translator('Categories')}</h5>
         <ul>
           <li>
-            <a onClick={(e) => history.push('/category/party%20wear')}>
+            <a onClick={(e) => history.push('/party%20wear')}>
               {translator('Party Wear')}
             </a>
           </li>
           <li>
-            <a onClick={(e) => history.push('/category/casual%20wear')}>
+            <a onClick={(e) => history.push('/casual%20wear')}>
               {translator('Casual Wear')}
             </a>
           </li>
           <li>
-            <a onClick={(e) => history.push('/category/accessories')}>
+            <a onClick={(e) => history.push('/accessories')}>
               {translator('Accessories')}
             </a>
           </li>
           <li>
-            <a onClick={(e) => history.push('/category/footwear')}>
+            <a onClick={(e) => history.push('/footwear')}>
               {translator('Footwear')}
             </a>
           </li>
