@@ -1,110 +1,118 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
-import { Link, useHistory } from 'react-router-dom';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+import GoogleIcon from '../../assets/img/icons/google.svg';
+import FacebookButton from '../../assets/img/icons/facebook.svg';
 
-import IconButton from '@material-ui/core/IconButton';
-import PhoneIcon from '@material-ui/icons/Phone';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import EmailIcon from '@material-ui/icons/Email';
-import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
-import translate from '../../utils/i18n/translate';
+import './Login.scss';
 
-import './Login.css';
+const StyledButton = withStyles({
+  root: {
+    backgroundColor: '#202124',
+    color: '#fff',
+    borderRadius: '2px',
+    marginTop: '10px',
+    marginBottom: '50px',
+    padding: '10px 50px',
+    '&:hover': {
+      backgroundColor: '#F15A24',
+    },
+  },
+  label: {
+    fontSize: '0.8rem',
+  },
+})(Button);
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [open, setOpen] = useState(false);
-  const history = useHistory();
+const StyledDialog = withStyles({
+  root: {
+    textAlign: 'center',
+    borderRadius: '0px;',
+    '& .MuiDialog-paper': {
+      borderRadius: '0px',
+    },
+  },
+})(Dialog);
 
-  const translator = (item) =>
-    translate(item) === item ? item : translate(item);
+const StyledTextField = withStyles({
+  root: {
+    '& label.Mui-focused': {
+      color: '#202124',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#202124',
+        borderRadius: '2px',
+      },
+      '&:hover fieldset': {
+        borderColor: '#202124',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#202124',
+      },
+    },
+  },
+})(TextField);
 
-  const signIn = (e) => {
-    e.preventDefault();
-  };
-
-  const register = (e) => {
-    e.preventDefault();
-  };
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
+const Login = ({ open, setOpen }) => {
   const handleClose = () => {
     setOpen(false);
   };
 
   return (
     <div className="login">
-      <div className="login__icon">
-        <IconButton onClick={handleClickOpen}>
-          <PersonOutlineOutlinedIcon />
-        </IconButton>
-      </div>
-
-      <Dialog
+      <StyledDialog
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <h1 className="login__logo">Little Tags</h1>
-
-        <div className="login__card">
-          <div className="login__container">
-            <h1>{translator('Sign-in')}</h1>
-            <form>
-              <h5>{translator('E-mail')}</h5>
-              <input
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-
-              <h5>{translator('Password')}</h5>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-
-              <button type="submit" onClick={signIn} className="login__email">
-                {translator('Sign-in')}
-              </button>
-            </form>
-            <button onClick={register} className="login__register">
-              {translator('Create your account')}
+        <DialogTitle id="form-dialog-title">
+          <h2>Login</h2>
+        </DialogTitle>
+        <p>Please Login to Proceed</p>
+        <DialogContent>
+          <DialogContentText></DialogContentText>
+          <StyledTextField
+            autoFocus
+            margin="normal"
+            id="email"
+            label="Email"
+            type="email"
+            variant="outlined"
+            fullWidth
+          />
+          <StyledTextField
+            margin="normal"
+            id="password"
+            label="Password"
+            type="password"
+            variant="outlined"
+            fullWidth
+          />
+          <StyledButton>Login</StyledButton>
+          <hr />
+          <div className="SocialLogin">
+            <button className="GoogleButton">
+              <img src={GoogleIcon} alt="Google Icon" /> Sign up with Google
+            </button>
+            <button className="FacebookButton">
+              <img src={FacebookButton} alt="Facebook Icon" />
+              Sign up with Facebook
             </button>
           </div>
-          <p>{translator('or sign-in with:')}</p>
-          <div className="login__options">
-            <button
-              type="submit"
-              onClick={signIn}
-              className="login__google btn"
-            >
-              <EmailIcon />
-              {translator('Google')}
-            </button>
-            <button
-              type="submit"
-              onClick={signIn}
-              className="login__facebook btn"
-            >
-              <FacebookIcon />
-              {translator('Facebook')}
-            </button>
-            <button type="submit" onClick={signIn} className="login__phone btn">
-              <PhoneIcon />
-              {translator('Phone')}
+          <div className="NotRegistered">
+            <button className="NotRegisteredButton">
+              Not registered yet? <br /> Sign Up
             </button>
           </div>
-        </div>
-      </Dialog>
+        </DialogContent>
+      </StyledDialog>
     </div>
   );
-}
+};
 
 export default Login;

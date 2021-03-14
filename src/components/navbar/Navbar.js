@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useStateValue } from '../../store/StoreProvider';
 import IconButton from '@material-ui/core/IconButton';
 import Search from '../Search/Search';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
@@ -9,64 +8,31 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Badge from '@material-ui/core/Badge';
+import Login from '../Login/Login';
 import './Navbar.scss';
 import translate from '../../utils/i18n/translate';
+import { useStateValue } from '../../store/StoreProvider';
+
+import Tooltip from '@material-ui/core/Tooltip';
 import LanguageIcon from '@material-ui/icons/Language';
 import { LOCALES } from '../../utils/i18n';
 
-import Tooltip from '@material-ui/core/Tooltip';
-
-import { Link } from 'react-router-dom';
-import Login from '../login/Login';
-
 const Navbar = () => {
   const [{ locale, user }, dispatch] = useStateValue();
-
-  const translator = (item) =>
-    translate(item) === item ? item : translate(item);
-
-  // Profile Menu
   const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
 
   const isMenuOpen = Boolean(anchorEl);
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleProfileMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleProfileMenuclick = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
-
-  const menuId = 'desktopProfileMenu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleProfileMenuClose}
-    >
-      <MenuItem onClick={handleProfileMenuClose}>
-        {translator('Logout')}
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuClose}>
-        {translator('Your Orders')}
-      </MenuItem>
-    </Menu>
-  );
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   // Language Menu
   const [languageAnchorEl, setLanguageAnchorEl] = React.useState(null);
 
   const isLanguageMenuOpen = Boolean(languageAnchorEl);
+
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
 
   const handleLanguageMenuOpen = (event) => {
     setLanguageAnchorEl(event.currentTarget);
@@ -85,6 +51,7 @@ const Navbar = () => {
     setLanguageAnchorEl(e.currentTarget);
   };
 
+  // Language Icon Logic
   const languageId = 'languageMenu';
   const renderLanguageMenu = (
     <Menu
@@ -108,10 +75,6 @@ const Navbar = () => {
     </Menu>
   );
 
-  // Mobile Menu
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
@@ -119,6 +82,43 @@ const Navbar = () => {
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
+
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleLoginClick = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+    setOpen(true);
+  };
+
+  const handleDesktopProfileMenuclick = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+
+  const menuId = 'desktopProfileMenu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleLoginClick}>Login</MenuItem>
+      <Login open={open} setOpen={setOpen} />
+      <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My orders</MenuItem>
+    </Menu>
+  );
 
   const mobileMenuId = 'mobileProfileMenu';
   const renderMobileMenu = (
@@ -158,78 +158,35 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar__logo">
-        <Link className="navbar__link" to="/">
-          <h2 className="navbarLogo">Little Tags</h2>
-          <h2 className="navbarMobileLogo">LT</h2>
-        </Link>
-      </div>
-
-      <Search className="navbar__search" />
-
-      <div className="navbar__right">
-        <div className="navbar__desktopMenu">
-          <div className="navbar__option">
-            <div className="navbar__option">
-              {user ? (
-                <>
-                  <span className="navbar__username">
-                    Hello, tushar.langer@gmail.com
-                  </span>
-                  <Tooltip title="Profile" aria-label="Profile">
-                    <IconButton
-                      aria-controls={menuId}
-                      aria-haspopup="true"
-                      onClick={handleProfileMenuclick}
-                    >
-                      <PersonOutlineOutlinedIcon />
-                    </IconButton>
-                  </Tooltip>
-                </>
-              ) : (
-                <>
-                  <span className="navbar__username">
-                    {translator('Hello, Guest')}
-                  </span>
-                  <Tooltip title="Login" aria-label="Login">
-                    <Login />
-                  </Tooltip>
-                </>
-              )}
-            </div>
-            <Tooltip title="Language" aria-label="Language">
-              <IconButton
-                aria-controls={languageId}
-                aria-haspopup="true"
-                onClick={handleLanguageMenuclick}
-              >
-                <LanguageIcon />
-              </IconButton>
-            </Tooltip>
-          </div>
-
-          <div className="navbar__option">
-            <Link className="navbar__link" to="/wishlist">
-              <Tooltip title="Wishlist" aria-label="Wishlist">
-                <IconButton>
-                  <FavoriteBorderIcon />
-                </IconButton>
-              </Tooltip>
-            </Link>
-          </div>
-
-          <div className="navbar__option">
-            <Link className="navbar__link" to="/cart">
-              <Tooltip title="Cart" aria-label="Cart">
-                <IconButton>
-                  <ShoppingCartOutlinedIcon />
-                </IconButton>
-              </Tooltip>
-            </Link>
-          </div>
+      <h2 className="navbarLogo">Little Tags</h2>
+      <h2 className="navbarMobileLogo">LT</h2>
+      <div className="navbar_right">
+        <Search />
+        <div className="navbar_desktopMenu">
+          <IconButton
+            aria-controls={menuId}
+            aria-haspopup="true"
+            onClick={handleDesktopProfileMenuclick}
+          >
+            <PersonOutlineOutlinedIcon />
+          </IconButton>
+          <Tooltip title="Language" aria-label="Language">
+            <IconButton
+              aria-controls={languageId}
+              aria-haspopup="true"
+              onClick={handleLanguageMenuclick}
+            >
+              <LanguageIcon />
+            </IconButton>
+          </Tooltip>
+          <IconButton>
+            <FavoriteBorderIcon />
+          </IconButton>
+          <IconButton>
+            <ShoppingCartOutlinedIcon />
+          </IconButton>
         </div>
-
-        <div className="navbar__mobileMenu">
+        <div className="navbar_mobileMenu">
           <IconButton
             aria-label="show more"
             aria-controls={mobileMenuId}
@@ -241,9 +198,9 @@ const Navbar = () => {
           </IconButton>
         </div>
       </div>
-      {renderLanguageMenu}
       {renderMenu}
       {renderMobileMenu}
+      {renderLanguageMenu}
     </nav>
   );
 };

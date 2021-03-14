@@ -1,0 +1,55 @@
+@import "../../components/colors";
+.ProductCard {
+  max-width: 224px;
+  margin: 20px;
+  transition: max-width 0.3s;
+  &:hover {
+    max-width: 230px;
+  }
+  .ImgContainer {
+    max-width: inherit;
+    object-fit: contain;
+    &:hover {
+      max-width: 234px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .ProductDetailContainer {
+    .ProductContent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        text-align: left;
+      }
+    }
+    .productBuyContainer {
+      display: flex;
+      justify-content: space-between;
+      .priceRating {
+        text-align: left;
+        p {
+          font-size: 1.2rem;
+          padding-bottom: 5px;
+        }
+      }
+      .Cart {
+        .CartContainer {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          background-color: $orange;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
