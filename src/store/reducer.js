@@ -5,6 +5,7 @@ export const initialState = {
   user: null,
   cart: [],
   wishlist: [],
+  userDetails: [],
 };
 
 export const actionTypes = {
@@ -16,6 +17,7 @@ export const actionTypes = {
   REMOVE_FROM_WISHLIST: 'REMOVE_FROM_WISHLIST',
   EMPTY_WISHLIST: 'EMPTY_WISHLIST',
   SET_USER: 'SET_USER',
+  SET_USER_DETAILS: 'SET_USER_DETAILS',
 };
 
 export const getCartTotal = (cart) =>
@@ -94,6 +96,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: action.user,
+      };
+
+    case actionTypes.SET_USER_DETAILS:
+      return {
+        ...state,
+        user: action.userDetails,
       };
     default:
       return state;
