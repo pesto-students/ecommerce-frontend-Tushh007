@@ -11,6 +11,7 @@ import { useHistory } from 'react-router-dom';
 import FAKEDATA from '../../utils/fakeData';
 
 import { makeStyles } from '@material-ui/core/styles';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const filter = createFilterOptions();
 // const useStyles = makeStyles({
@@ -108,6 +109,15 @@ const Search = () => {
               variant="standard"
               className="search__input"
               onKeyDown={(e) => handleKeyDown(e)}
+              // InputProps={{
+              //   endAdornment: (
+              //     <InputAdornment>
+              //       <IconButton>
+              //         <SearchIcon />
+              //       </IconButton>
+              //     </InputAdornment>
+              //   ),
+              // }}
               // InputProps={{ classes }}
               // InputProps={{
               //   endAdornment: (
@@ -117,10 +127,11 @@ const Search = () => {
               //   ),
               // }}
             />
-
+            {/**
             <IconButton type="submit" onClick={searchQuery} aria-label="search">
               <SearchIcon />
             </IconButton>
+            */}
           </form>
         )}
       />

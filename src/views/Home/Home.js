@@ -6,7 +6,6 @@ import translate from '../../utils/i18n/translate';
 import { useHistory } from 'react-router-dom';
 import './Home.scss';
 import FAKEDATA from '../../utils/fakeData';
-import ProductCard from '../../components/productCard/ProductCard';
 
 const Home = () => {
   const history = useHistory();
@@ -30,7 +29,7 @@ const Home = () => {
             </p>
             <button
               className="home__categories1__button"
-              onClick={(e) => history.push('/party%20wear')}
+              onClick={(e) => history.push('/products/party%20wear')}
             >
               {translator('SHOP NOW')}
             </button>
@@ -51,7 +50,7 @@ const Home = () => {
             </p>
             <button
               className="home__categories1__button"
-              onClick={(e) => history.push('/casual%20wear')}
+              onClick={(e) => history.push('/products/casual%20wear')}
             >
               {translator('SHOP NOW')}
             </button>
@@ -72,7 +71,7 @@ const Home = () => {
             </p>
             <button
               className="home__categories1__button"
-              onClick={(e) => history.push('/accessories')}
+              onClick={(e) => history.push('/products/accessories')}
             >
               {translator('FOOTWEAR')}
             </button>
@@ -91,7 +90,7 @@ const Home = () => {
             </p>
             <button
               className="home__categories1__button"
-              onClick={(e) => history.push('/footwear')}
+              onClick={(e) => history.push('/products/footwear')}
             >
               {translator('SHOP NOW')}
             </button>

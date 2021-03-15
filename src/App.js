@@ -42,12 +42,12 @@ function App() {
               <Wishlist />
               <Footer />
             </Route>
-            <Route path="/:category/:productName/:productId">
+            <Route path="/products/:category/:productName/:productId">
               <Navbar />
               <Product />
               <Footer />
             </Route>
-            <Route path="/:category">
+            <Route path="/products/:category">
               <Navbar />
               <Category />
               <Footer />

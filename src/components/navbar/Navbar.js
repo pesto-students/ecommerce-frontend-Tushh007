@@ -170,8 +170,9 @@ const Navbar = () => {
         <h2 className="navbarLogo">TagiFy</h2>
         <h2 className="navbarMobileLogo">TF</h2>
       </Link>
+
       <div className="navbar_right">
-        <Search />
+        <Search className="search__input" />
         <div className="navbar_desktopMenu">
           {user ? (
             <>
@@ -209,19 +210,23 @@ const Navbar = () => {
           </Tooltip>
 
           {user ? (
-            <Tooltip title="Favourite" aria-label="Favourite">
-              <IconButton>
-                <FavoriteBorderIcon />
-              </IconButton>
-            </Tooltip>
+            <Link to="/wishlist">
+              <Tooltip title="Favourite" aria-label="Favourite">
+                <IconButton>
+                  <FavoriteBorderIcon />
+                </IconButton>
+              </Tooltip>
+            </Link>
           ) : (
             <></>
           )}
-          <Tooltip title="Cart" aria-label="Cart">
-            <IconButton>
-              <ShoppingCartOutlinedIcon />
-            </IconButton>
-          </Tooltip>
+          <Link to="/cart">
+            <Tooltip title="Cart" aria-label="Cart">
+              <IconButton>
+                <ShoppingCartOutlinedIcon />
+              </IconButton>
+            </Tooltip>
+          </Link>
         </div>
 
         <div className="navbar_mobileMenu">
