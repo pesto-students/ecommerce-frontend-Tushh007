@@ -1,38 +1,25 @@
-import React from 'react';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
-import IconButton from '@material-ui/core/IconButton';
-import './Search.scss';
-import TextField from '@material-ui/core/TextField';
+import React from "react";
+import "./Search.scss";
+import TextField from "@material-ui/core/TextField";
 import Autocomplete, {
   createFilterOptions,
-} from '@material-ui/lab/Autocomplete';
-import { useHistory } from 'react-router-dom';
-import FAKEDATA from '../../utils/fakeData';
+} from "@material-ui/lab/Autocomplete";
+import { useHistory } from "react-router-dom";
+import FAKEDATA from "../../utils/fakeData";
 
-import { makeStyles } from '@material-ui/core/styles';
-import InputAdornment from '@material-ui/core/InputAdornment';
+import { makeStyles } from "@material-ui/core/styles";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 const filter = createFilterOptions();
-// const useStyles = makeStyles({
-//   underline: {
-//     '&&&:before': {
-//       borderBottom: 'none',
-//     },
-//     '&&:after': {
-//       borderBottom: 'none',
-//     },
-//   },
-// });
 
 const Search = () => {
   // const classes = useStyles();
   const history = useHistory();
-  const [input, setInput] = React.useState('');
+  const [input, setInput] = React.useState("");
   const [value, setValue] = React.useState(null);
 
   const searchQuery = (e) => {
-    console.log('search', input);
+    console.log("search", input);
     e.preventDefault();
     if (input.length > 0) {
       history.push(`/${encodeURIComponent(input)}`);
@@ -41,7 +28,7 @@ const Search = () => {
 
   const handleKeyDown = (e) => {
     console.log(input, value);
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       searchQuery(e);
     }
@@ -53,7 +40,7 @@ const Search = () => {
         value={value}
         onChange={(event, newValue) => {
           if (newValue) setInput(newValue.name);
-          if (typeof newValue === 'string') {
+          if (typeof newValue === "string") {
             setValue({
               name: newValue,
             });
@@ -70,7 +57,7 @@ const Search = () => {
           const filtered = filter(options, params);
 
           // Suggest the creation of a new value
-          if (params.inputValue !== '') {
+          if (params.inputValue !== "") {
             filtered.push({
               inputValue: params.inputValue,
               name: `Search "${params.inputValue}"`,
@@ -83,10 +70,10 @@ const Search = () => {
         clearOnBlur
         handleHomeEndKeys
         id="user-search"
-        options={FAKEDATA['ALL_PRODUCTS']}
+        options={FAKEDATA["ALL_PRODUCTS"]}
         getOptionLabel={(option) => {
           // Value selected with enter, right from the input
-          if (typeof option === 'string') {
+          if (typeof option === "string") {
             return option;
           }
           // Add "xxx" option created dynamically
@@ -97,7 +84,7 @@ const Search = () => {
           return option.name;
         }}
         renderOption={(option) => option.name}
-        style={{ width: 300 }}
+        style={{ width: 170 }}
         freeSolo
         renderInput={(params) => (
           <form className="search__bar">
