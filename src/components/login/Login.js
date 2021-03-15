@@ -76,7 +76,7 @@ const Login = () => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        history.push('/');
+        // history.push('/');
       })
       .catch((error) => alert(error.message));
   };
@@ -87,9 +87,9 @@ const Login = () => {
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         console.log(auth);
-        if (auth) {
-          history.push('/');
-        }
+        // if (auth) {
+        //   history.push('/');
+        // }
       })
       .catch((error) => alert(error.message));
   };

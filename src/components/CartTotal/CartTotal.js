@@ -28,10 +28,6 @@ function CartTotal() {
   const history = useHistory();
   const [{ cart }] = useStateValue();
 
-  useEffect(() => {
-    console.log(getCartTotal());
-  }, [cart]);
-
   return (
     <div className="cartTotal">
       <CurrencyFormat
@@ -52,9 +48,13 @@ function CartTotal() {
         thousandSeparator={true}
         prefix={'₹'}
       />
-      <StyledButton onClick={(e) => history.push('/cart')}>
-        Proceed to Checkout
-      </StyledButton>
+      {cart.length > 0 ? (
+        <StyledButton onClick={(e) => history.push('/checkout')}>
+          Proceed to Checkout
+        </StyledButton>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
