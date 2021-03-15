@@ -2,7 +2,6 @@ import React from 'react';
 import './ProductView.css';
 
 function ProductView({ images }) {
-  console.log(images);
   return (
     <div className="productView">
       <div className="productView__imagePlane">
