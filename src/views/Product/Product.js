@@ -1,24 +1,30 @@
-import React, { useState } from "react";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import { makeStyles } from "@material-ui/core/styles";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import FAKEDATA from "../../utils/fakeData";
-import ProductRating from "../../components/ProductRating/ProductRating";
-import ProductColor from "../../components/productColors/productColors";
-import Quantity from "../../components/Quantity/Quantity";
-import Review from "../../components/Review/Review";
-import "./Product.scss";
-import ProductRow from "../../components/ProductRow/ProductRow";
+import React, { useState, useEffect } from 'react';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import { makeStyles } from '@material-ui/core/styles';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import FAKEDATA from '../../utils/fakeData';
+import ProductRating from '../../components/ProductRating/ProductRating';
+import ProductColor from '../../components/productColors/productColors';
+import Quantity from '../../components/Quantity/Quantity';
+import Review from '../../components/Review/Review';
+import './Product.scss';
+import { useHistory } from 'react-router-dom';
+import translate from '../../utils/i18n/translate';
+import ProductRow from '../../components/ProductRow/ProductRow';
+import { Link } from 'react-router-dom';
+import { useStateValue } from '../../store/StoreProvider';
+
+import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    width: "100%",
-    marginTop: "25px",
+    width: '100%',
+    marginTop: '25px',
   },
   select: {
-    borderColor: "#202124",
+    borderColor: '#202124',
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -27,10 +33,38 @@ const useStyles = makeStyles((theme) => ({
 
 const Product = () => {
   const data = FAKEDATA.FEATURED_PRODUCTS;
-  console.log(data);
-  console.log(data[0].imageUrl);
   const classes = useStyles();
-  const [size, setSize] = useState("L");
+  const [size, setSize] = useState('L');
+  const history = useHistory();
+
+  const [product, setProduct] = useState({});
+  const { category, productId } = useParams();
+  const [{ cart }, dispatch] = useStateValue();
+
+  const addToCart = () => {
+    console.log(product);
+    dispatch({
+      type: 'ADD_TO_CART',
+      item: {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        category: product.category,
+        rating: product.rating,
+        imageUrl: product.imageUrl,
+      },
+    });
+  };
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const data = FAKEDATA[category.toUpperCase().replace(' ', '_')];
+    const product = data.find((data) => data.id == productId);
+    setProduct(product);
+    console.log(product);
+  }, [category, product]);
 
   const handleChange = (event) => {
     setSize(event.target.value);
@@ -42,10 +76,25 @@ const Product = () => {
     e.preventDefault();
   };
 
-  const colors = ["#ff66b3", "	#d9ffcc", "	#8c66ff"];
+  const colors = ['#ff66b3', '	#d9ffcc', '	#8c66ff'];
 
   return (
     <div className="product">
+      <div className="product__trail">
+        <Link to="/">
+          <p className="product__trailElement">{translator('HOME')}</p>
+        </Link>
+        <p className="product__trailElement">{'>'}</p>
+
+        <Link to={`/products/${category}`}>
+          <p className="product__trailElement">
+            {translator(category.toUpperCase())}
+          </p>
+        </Link>
+        <p className="product__trailElement">{'>'}</p>
+
+        <p className="product__trailElement">{product?.name}</p>
+      </div>
       <div className="productArea">
         <div className="productImages">
           <div className="productTumbnails">
@@ -71,16 +120,16 @@ const Product = () => {
             ></div>
           </div>
           <div className="productImage">
-            <img src={data[0].imageUrl} alt="" />
+            <img src={product?.imageUrl} alt="" />
           </div>
         </div>
         <div className="productDetail">
           <div className="productTitle">
-            <h2>{data[0].name}</h2>
+            <h2>{product?.name}</h2>
           </div>
           <div className="priceRating">
-            <p className="price">₹ {data[0].price}</p>
-            <ProductRating rating={data[0].rating} />
+            <p className="price">₹ {product?.price}</p>
+            <ProductRating rating={product?.rating} />
           </div>
           <div className="productInfo">
             <p>
@@ -100,11 +149,11 @@ const Product = () => {
                   onChange={handleChange}
                   label="Size"
                 >
-                  <MenuItem value={"X"}>XS</MenuItem>
-                  <MenuItem value={"SM"}>SM</MenuItem>
-                  <MenuItem value={"M"}>M</MenuItem>
-                  <MenuItem value={"L"}>L</MenuItem>
-                  <MenuItem value={"XL"}>XL</MenuItem>
+                  <MenuItem value={'X'}>XS</MenuItem>
+                  <MenuItem value={'SM'}>SM</MenuItem>
+                  <MenuItem value={'M'}>M</MenuItem>
+                  <MenuItem value={'L'}>L</MenuItem>
+                  <MenuItem value={'XL'}>XL</MenuItem>
                 </Select>
               </FormControl>
             </div>
@@ -115,7 +164,9 @@ const Product = () => {
             <div className="qtyCart">
               <Quantity />
               <div className="addToCart">
-                <button className="cartBtn">Add to Cart</button>
+                <button className="cartBtn" onClick={addToCart}>
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -129,7 +180,7 @@ const Product = () => {
       <div className="featuredProducts">
         <ProductRow
           title="Featured Products"
-          items={FAKEDATA["FEATURED_PRODUCTS"]}
+          items={FAKEDATA['FEATURED_PRODUCTS']}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import translate from '../../utils/i18n/translate';
 import ProductCard from '../productCard/ProductCard';
 

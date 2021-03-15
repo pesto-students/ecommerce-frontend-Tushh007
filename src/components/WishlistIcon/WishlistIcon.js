@@ -12,7 +12,6 @@ function WishlistIcon({ product }) {
       type: 'ADD_TO_WISHLIST',
       item: product,
     });
-    console.log(wishlist);
   };
   return (
     <div className="wishlistIcon">

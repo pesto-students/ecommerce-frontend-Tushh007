@@ -12,9 +12,9 @@ export const actionTypes = {
   ADD_TO_CART: 'ADD_TO_CART',
   REMOVE_FROM_CART: 'REMOVE_FROM_CART',
   EMPTY_CART: 'EMPTY_CART',
-  ADD_TO_WISHLIST: 'ADD_TO_CART',
-  REMOVE_FROM_WISHLIST: 'REMOVE_FROM_CART',
-  EMPTY_WISHLIST: 'EMPTY_CART',
+  ADD_TO_WISHLIST: 'ADD_TO_WISHLIST',
+  REMOVE_FROM_WISHLIST: 'REMOVE_FROM_WISHLIST',
+  EMPTY_WISHLIST: 'EMPTY_WISHLIST',
   SET_USER: 'SET_USER',
 };
 
@@ -64,7 +64,7 @@ const reducer = (state, action) => {
     case actionTypes.ADD_TO_WISHLIST:
       return {
         ...state,
-        wshlist: [...state.wishlist, action.item],
+        wishlist: [...state.wishlist, action.item],
       };
 
     case actionTypes.REMOVE_FROM_WISHLIST:
