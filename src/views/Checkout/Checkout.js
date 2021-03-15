@@ -84,6 +84,7 @@ const Checkout = () => {
               <StyledTextField
                 margin="normal"
                 id="name"
+                name="name"
                 label="name"
                 type="text"
                 variant="outlined"
@@ -96,11 +97,13 @@ const Checkout = () => {
               <StyledTextField
                 margin="normal"
                 id="lastName"
+                name="lastName"
                 label="last name"
                 type="text"
                 name="lastName"
                 onChange={handleFormChange}
                 variant="outlined"
+                onChange={handleFormChange}
                 fullWidth
               />
             </Grid>

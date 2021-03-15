@@ -1,7 +1,7 @@
-import React from 'react';
-import './Sidebar.css';
-import translate from '../../utils/i18n/translate';
-import { useHistory } from 'react-router-dom';
+import React from "react";
+import "./Sidebar.scss";
+import translate from "../../utils/i18n/translate";
+import { useHistory } from "react-router-dom";
 
 function Sidebar() {
   const history = useHistory();
@@ -10,27 +10,28 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar__options">
-        <h5>{translator('Categories')}</h5>
+        <h5>{translator("Categories")}</h5>
         <ul>
-          <li>
-            <a onClick={(e) => history.push('/products/party%20wear')}>
-              {translator('Party Wear')}
-            </a>
+          <li
+            tabIndex="0"
+            onClick={(e) => history.push("/products/party%20wear")}
+          >
+            <a>{translator("Party Wear")}</a>
           </li>
-          <li>
-            <a onClick={(e) => history.push('/products/casual%20wear')}>
-              {translator('Casual Wear')}
-            </a>
+          <li
+            tabIndex="0"
+            onClick={(e) => history.push("/products/casual%20wear")}
+          >
+            <a>{translator("Casual Wear")}</a>
           </li>
-          <li>
-            <a onClick={(e) => history.push('/products/accessories')}>
-              {translator('Accessories')}
-            </a>
+          <li
+            tabIndex="0"
+            onClick={(e) => history.push("/products/accessories")}
+          >
+            <a>{translator("Accessories")}</a>
           </li>
-          <li>
-            <a onClick={(e) => history.push('/products/footwear')}>
-              {translator('Footwear')}
-            </a>
+          <li tabIndex="0" onClick={(e) => history.push("/products/footwear")}>
+            <a>{translator("Footwear")}</a>
           </li>
         </ul>
       </div>

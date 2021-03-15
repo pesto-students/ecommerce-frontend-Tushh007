@@ -42,7 +42,6 @@ const Product = () => {
   const [{ cart }, dispatch] = useStateValue();
 
   const addToCart = () => {
-    console.log(product);
     dispatch({
       type: 'ADD_TO_CART',
       item: {
@@ -55,6 +54,8 @@ const Product = () => {
       },
     });
   };
+
+
   const translator = (item) =>
     translate(item) === item ? item : translate(item);
 
@@ -71,8 +72,6 @@ const Product = () => {
   };
 
   const handleThumbnailClick = (e) => {
-    console.log(e.target.parentNode);
-    e.target.style.opacity = 1;
     e.preventDefault();
   };
 
@@ -80,21 +79,6 @@ const Product = () => {
 
   return (
     <div className="product">
-      <div className="product__trail">
-        <Link to="/">
-          <p className="product__trailElement">{translator('HOME')}</p>
-        </Link>
-        <p className="product__trailElement">{'>'}</p>
-
-        <Link to={`/products/${category}`}>
-          <p className="product__trailElement">
-            {translator(category.toUpperCase())}
-          </p>
-        </Link>
-        <p className="product__trailElement">{'>'}</p>
-
-        <p className="product__trailElement">{product?.name}</p>
-      </div>
       <div className="productArea">
         <div className="productImages">
           <div className="productTumbnails">
@@ -102,21 +86,25 @@ const Product = () => {
               className="productThumbnail"
               style={{ backgroundImage: `url(${data[0].thumbnails[0]})` }}
               onClick={handleThumbnailClick}
+              tabindex="0"
             ></div>
             <div
               className="productThumbnail"
               style={{ backgroundImage: `url(${data[2].thumbnails[1]})` }}
               onClick={handleThumbnailClick}
+              tabindex="0"
             ></div>
             <div
               className="productThumbnail"
               style={{ backgroundImage: `url(${data[0].thumbnails[2]})` }}
               onClick={handleThumbnailClick}
+              tabindex="0"
             ></div>
             <div
               className="productThumbnail"
               style={{ backgroundImage: `url(${data[0].thumbnails[3]})` }}
               onClick={handleThumbnailClick}
+              tabindex="0"
             ></div>
           </div>
           <div className="productImage">

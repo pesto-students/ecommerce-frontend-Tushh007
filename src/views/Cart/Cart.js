@@ -15,7 +15,6 @@ function Cart() {
   return (
     <div className="cart">
       <div className="cart__left">
-        <div>
           <h3>Hello, {user ? user.email : 'Guest'}</h3>
           <h2 className="cart__title">Your Shopping Cart</h2>
           {cart.map((item) => (
@@ -28,7 +27,6 @@ function Cart() {
               imageUrl={item.imageUrl}
             />
           ))}
-        </div>
       </div>
 
       <div className="cart__right">
