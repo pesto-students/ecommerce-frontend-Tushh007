@@ -11,6 +11,7 @@ import Product from "./views/Product/Product";
 import Wishlist from "./views/Wishlist/Wishlist";
 import Cart from "./views/Cart/Cart";
 import Checkout from "./views/Checkout/Checkout";
+import OrderDetail from "./views/OrderDetail/OrderDetail";
 import { auth } from "./utils/firebase";
 
 function App() {
@@ -61,6 +62,11 @@ function App() {
             <Route path="/checkout">
               <Navbar />
               <Checkout />
+              <Footer />
+            </Route>
+            <Route path="/order-detail">
+              <Navbar />
+              <OrderDetail />
               <Footer />
             </Route>
             <Route path="/">
