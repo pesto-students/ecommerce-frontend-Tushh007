@@ -25,9 +25,15 @@ const StyledButton = withStyles({
 })(Button);
 
 const OrderDetail = () => {
-  const [{ userDetails }] = useStateValue();
+  const [{ userDetails }, dispatch] = useStateValue();
   const history = useHistory();
   const data = FAKEDATA.FEATURED_PRODUCTS;
+  const handleShopping = (e) => {
+    dispatch({
+      type: 'EMPTY_CART',
+    });
+    history.push('/');
+  };
   return (
     <div className="OrderDetail">
       <div className="orderDetailHeader">
@@ -92,7 +98,7 @@ const OrderDetail = () => {
             <h4>Payment Method</h4>
             <p>Cash on Delivery</p>
 
-            <StyledButton onClick={(e) => history.push('/')}>
+            <StyledButton onClick={(e) => handleShopping(e)}>
               Continue Shopping
             </StyledButton>
           </div>
