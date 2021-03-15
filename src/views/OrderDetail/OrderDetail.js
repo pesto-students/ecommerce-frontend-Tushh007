@@ -1,8 +1,32 @@
-import React from "react";
-import FAKEDATA from "../../utils/fakeData";
-import "./OrderDetail.scss";
+import React from 'react';
+import FAKEDATA from '../../utils/fakeData';
+import './OrderDetail.scss';
+
+import { useHistory } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+import { useStateValue } from '../../store/StoreProvider';
+
+const StyledButton = withStyles({
+  root: {
+    backgroundColor: '#202124',
+    color: '#fff',
+    borderRadius: '2px',
+    marginTop: '10px',
+    marginBottom: '50px',
+    padding: '10px 50px',
+    '&:hover': {
+      backgroundColor: '#202124',
+    },
+  },
+  label: {
+    fontSize: '0.8rem',
+  },
+})(Button);
 
 const OrderDetail = () => {
+  const [{ userDetails }] = useStateValue();
+  const history = useHistory();
   const data = FAKEDATA.FEATURED_PRODUCTS;
   return (
     <div className="OrderDetail">
@@ -57,18 +81,20 @@ const OrderDetail = () => {
             <h4>Personal Details</h4>
             <div className="nameEmail">
               <h5>Name</h5>
-              <p>John Doe</p>
+              <p>{userDetails.name}</p>
               <h5>Email</h5>
-              <p>john.doe@gmail.com</p>
+              <p>tushar.langer@gmail.com</p>
               <h5>Phone</h5>
-              <p>7045525879</p>
+              <p>7022209250</p>
             </div>
             <h4>Shipping</h4>
-            <p className="shippingAddress">
-              Zielinskiego 30 – 41, 53-345 Wroclaw, Poland
-            </p>
+            <p className="shippingAddress">Bengalore</p>
             <h4>Payment Method</h4>
             <p>Cash on Delivery</p>
+
+            <StyledButton onClick={(e) => history.push('/')}>
+              Continue Shopping
+            </StyledButton>
           </div>
         </div>
       </div>

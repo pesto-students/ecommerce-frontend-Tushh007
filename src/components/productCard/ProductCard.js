@@ -7,9 +7,12 @@ import { useStateValue } from '../../store/StoreProvider';
 import WishlistIcon from '../WishlistIcon/WishlistIcon';
 import CartIcon from '../CartIcon/CartIcon';
 import { useLocation } from 'react-router-dom';
+import translate from '../../utils/i18n/translate';
 
 const ProductCard = ({ product }) => {
   const location = useLocation();
+  const translator = (item) =>
+    translate(item) === item ? item : translate(item);
 
   const [{ user }] = useStateValue();
   const history = useHistory();
@@ -42,7 +45,7 @@ const ProductCard = ({ product }) => {
       <div className="ProductDetailContainer">
         <div className="ProductContent">
           <Tooltip title={toTitleCase(product?.name)}>
-            <p onClick={(e) => renderProduct(e)}>{productName}</p>
+            <p onClick={(e) => renderProduct(e)}>{translator(productName)}</p>
           </Tooltip>
           {user ? <WishlistIcon product={product} /> : <></>}
         </div>

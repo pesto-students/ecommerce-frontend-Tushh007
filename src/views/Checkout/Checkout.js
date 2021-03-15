@@ -1,45 +1,52 @@
-import React from "react";
-import Grid from "@material-ui/core/Grid";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import TextField from "@material-ui/core/TextField";
-import { withStyles } from "@material-ui/core/styles";
-import "./Checkout.scss";
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core/styles';
+import './Checkout.scss';
+import { useHistory } from 'react-router-dom';
+import { useStateValue } from '../../store/StoreProvider';
+import { getCartTotal } from '../../store/reducer';
 
 const StyledTextField = withStyles({
   root: {
-    "& label.Mui-focused": {
-      color: "#202124",
+    '& label.Mui-focused': {
+      color: '#202124',
     },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "#202124",
-        borderRadius: "2px",
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#202124',
+        borderRadius: '2px',
       },
-      "&:hover fieldset": {
-        borderColor: "#202124",
+      '&:hover fieldset': {
+        borderColor: '#202124',
       },
-      "&.Mui-focused fieldset": {
-        borderColor: "#202124",
+      '&.Mui-focused fieldset': {
+        borderColor: '#202124',
       },
     },
   },
 })(TextField);
 
 const Checkout = () => {
-  const [value, setValue] = React.useState("");
+  const history = useHistory();
+  const [{ user, cart }, dispatch] = useStateValue();
+  const [value, setValue] = React.useState('female');
+
   const defaultFormDate = {
-    name: "",
-    lastName: "",
-    streetName: "",
-    house: "",
-    city: "",
-    country: "",
-    pincode: "",
-    phone: "",
+    name: '',
+    lastName: '',
+    streetName: '',
+    house: '',
+    city: '',
+    country: '',
+    pincode: '',
+    phone: '',
   };
+
   const [formData, setFormData] = React.useState({ ...defaultFormDate });
 
   const handleChange = (event) => {
@@ -49,15 +56,28 @@ const Checkout = () => {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    console.log(formData);
   };
+
+  const handlePayment = (e) => {
+    dispatch({
+      type: 'SET_USER_DETAILS',
+      userDetails: formData,
+    });
+    history.push('/order');
+  };
+
   return (
     <div className="checkout">
       <div className="checkoutLeft">
         <h2 className="chckoutTitle">Details</h2>
-        <div className="checkoutLoginBtn">
-          <button>Login to Your Account</button>
-        </div>
+        {!user ? (
+          <div className="checkoutLoginBtn">
+            <button>Login to Your Account</button>
+          </div>
+        ) : (
+          <></>
+        )}
+
         <div className="checkoutForm">
           <Grid container spacing={2}>
             <Grid item lg={6} md={6} sm={12} xs={12}>
@@ -68,6 +88,7 @@ const Checkout = () => {
                 label="name"
                 type="text"
                 variant="outlined"
+                name="name"
                 onChange={handleFormChange}
                 fullWidth
               />
@@ -79,6 +100,8 @@ const Checkout = () => {
                 name="lastName"
                 label="last name"
                 type="text"
+                name="lastName"
+                onChange={handleFormChange}
                 variant="outlined"
                 onChange={handleFormChange}
                 fullWidth
@@ -90,6 +113,8 @@ const Checkout = () => {
                 id="streetName"
                 label="street name"
                 type="text"
+                name="streetName"
+                onChange={handleFormChange}
                 variant="outlined"
                 fullWidth
               />
@@ -100,6 +125,8 @@ const Checkout = () => {
                 id="house"
                 label="House /Appartment"
                 type="text"
+                name="house"
+                onChange={handleFormChange}
                 variant="outlined"
                 fullWidth
               />
@@ -110,6 +137,8 @@ const Checkout = () => {
                 id="city"
                 label="City"
                 type="text"
+                name="city"
+                onChange={handleFormChange}
                 variant="outlined"
                 fullWidth
               />
@@ -120,6 +149,8 @@ const Checkout = () => {
                 id="country"
                 label="Country"
                 type="text"
+                name="country"
+                onChange={handleFormChange}
                 variant="outlined"
                 fullWidth
               />
@@ -130,6 +161,8 @@ const Checkout = () => {
                 id="pinCode"
                 label="pincode"
                 type="text"
+                name="pincode"
+                onChange={handleFormChange}
                 variant="outlined"
                 fullWidth
               />
@@ -141,6 +174,8 @@ const Checkout = () => {
                 label="phone"
                 type="text"
                 variant="outlined"
+                name="phone"
+                onChange={handleFormChange}
                 fullWidth
               />
             </Grid>
@@ -170,7 +205,9 @@ const Checkout = () => {
             </FormControl>
           </div>
           <div className="paymentBtn">
-            <button>Continue to Payment</button>
+            <button onClick={(e) => handlePayment(e)}>
+              Continue to Payment
+            </button>
           </div>
         </div>
       </div>
@@ -179,24 +216,28 @@ const Checkout = () => {
           <h3>Product Summary</h3>
           <div className="summarydata">
             <div className="summartTitle">Products</div>
-            <div className="summartValue">1</div>
+            <div className="summartValue">{cart.length}</div>
           </div>
           <div className="summarydata">
             <div className="summartTitle">Subtotal</div>
-            <div className="summartValue">₹ 1.00</div>
+            <div className="summartValue">₹ {getCartTotal(cart)}</div>
           </div>
           <div className="summarydata">
-            <div className="summartTitle">Tax</div>
-            <div className="summartValue">₹ 1.00</div>
+            <div className="summartTitle">Tax (18%) </div>
+            <div className="summartValue">
+              ₹ {Math.ceil(getCartTotal(cart) * 0.18)}
+            </div>
           </div>
           <div className="summarydata">
-            <div className="summartTitle">Shipping</div>
-            <div className="summartValue">₹ 1.00</div>
+            <div className="summartTitle">Shipping (₹250)</div>
+            <div className="summartValue">₹ 250.00</div>
           </div>
           <hr /> <br />
           <div className="summarydata">
             <div className="summartTitle">Total</div>
-            <div className="summartValue">₹ 1.00</div>
+            <div className="summartValue">
+              ₹ {getCartTotal(cart) + getCartTotal(cart) * 0.18 + 250}
+            </div>
           </div>
         </div>
       </div>

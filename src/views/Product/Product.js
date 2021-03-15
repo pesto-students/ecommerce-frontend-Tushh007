@@ -64,6 +64,7 @@ const Product = () => {
     const data = FAKEDATA[category.toUpperCase().replace(' ', '_')];
     const product = data.find((data) => data.id == productId);
     setProduct(product);
+    console.log(product, data);
   }, [category, product]);
 
   const handleChange = (event) => {
@@ -116,6 +117,7 @@ const Product = () => {
           </div>
           <div className="priceRating">
             <p className="price">₹ {product?.price}</p>
+            {console.log(product.rating)}
             <ProductRating rating={product?.rating} />
           </div>
           <div className="productInfo">
