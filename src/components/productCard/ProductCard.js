@@ -1,11 +1,26 @@
 import React from 'react';
 import './ProductCard.scss';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import IconButton from '@material-ui/core/IconButton';
-import Cart from '../../assets/img/icons/cart.svg';
+import { useHistory } from 'react-router-dom';
 import ProductRating from '../ProductRating/ProductRating';
 import Tooltip from '@material-ui/core/Tooltip';
+import { useStateValue } from '../../store/StoreProvider';
+import WishlishIcon from '../WishlistIcon/WishlistIcon';
+import CartIcon from '../CartIcon/CartIcon';
+import { useLocation } from 'react-router-dom';
+
 const ProductCard = ({ product }) => {
+  const location = useLocation();
+  console.log(location.pathname);
+
+  const [{ user }] = useStateValue();
+  const history = useHistory();
+
+  const renderProduct = (e) => {
+    history.push(
+      `/products/${product?.category}/${product.name}/${product?.id}`
+    );
+  };
+
   function toTitleCase(str) {
     return str?.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -28,11 +43,9 @@ const ProductCard = ({ product }) => {
       <div className="ProductDetailContainer">
         <div className="ProductContent">
           <Tooltip title={toTitleCase(product?.name)}>
-            <p>{productName}</p>
+            <p onClick={(e) => renderProduct(e)}>{productName}</p>
           </Tooltip>
-          <IconButton>
-            <FavoriteBorderIcon />
-          </IconButton>
+          {user ? <WishlishIcon product={product} /> : <></>}
         </div>
         <div className="productBuyContainer">
           <div className="priceRating">
@@ -41,13 +54,7 @@ const ProductCard = ({ product }) => {
               <ProductRating rating={product?.rating} />
             </div>
           </div>
-          <div className="Cart">
-            <div className="CartContainer">
-              <IconButton>
-                <img src={Cart} alt="" />
-              </IconButton>
-            </div>
-          </div>
+          <CartIcon product={product} />
         </div>
       </div>
     </div>

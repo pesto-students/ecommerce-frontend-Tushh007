@@ -1,0 +1,21 @@
+.cart {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  min-height: 50vh;
+  display: flex;
+  padding: 20px;
+  background-color: white;
+  height: max-content;
+
+  .cart__left {
+    width: 100%;
+
+    .cart__title {
+      margin-right: 10px;
+      padding: 10px;
+      border-bottom: 1px solid lightgray;
+    }
+  } 
+  
+}

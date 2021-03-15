@@ -11,38 +11,36 @@ import { useHistory } from 'react-router-dom';
 import FAKEDATA from '../../utils/fakeData';
 
 import { makeStyles } from '@material-ui/core/styles';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const filter = createFilterOptions();
-const useStyles = makeStyles({
-  underline: {
-    '&&&:before': {
-      borderBottom: 'none',
-    },
-    '&&:after': {
-      borderBottom: 'none',
-    },
-  },
-});
-
-const products = new Array().concat(
-  FAKEDATA['ACCESSORIES'],
-  FAKEDATA['FOOTWEAR'],
-  FAKEDATA['CASUAL_WEAR'],
-  FAKEDATA['PARTY_WEAR']
-);
+// const useStyles = makeStyles({
+//   underline: {
+//     '&&&:before': {
+//       borderBottom: 'none',
+//     },
+//     '&&:after': {
+//       borderBottom: 'none',
+//     },
+//   },
+// });
 
 const Search = () => {
+  // const classes = useStyles();
   const history = useHistory();
   const [input, setInput] = React.useState('');
-  const classes = useStyles();
   const [value, setValue] = React.useState(null);
 
   const searchQuery = (e) => {
+    console.log('search', input);
     e.preventDefault();
-    if (input.length > 0) history.push('/category/party%20wear');
+    if (input.length > 0) {
+      history.push(`/${encodeURIComponent(input)}`);
+    }
   };
 
   const handleKeyDown = (e) => {
+    console.log(input, value);
     if (e.key === 'Enter') {
       e.preventDefault();
       searchQuery(e);
@@ -54,6 +52,7 @@ const Search = () => {
       <Autocomplete
         value={value}
         onChange={(event, newValue) => {
+          if (newValue) setInput(newValue.name);
           if (typeof newValue === 'string') {
             setValue({
               name: newValue,
@@ -84,7 +83,7 @@ const Search = () => {
         clearOnBlur
         handleHomeEndKeys
         id="user-search"
-        options={products}
+        options={FAKEDATA['ALL_PRODUCTS']}
         getOptionLabel={(option) => {
           // Value selected with enter, right from the input
           if (typeof option === 'string') {
@@ -110,6 +109,15 @@ const Search = () => {
               variant="standard"
               className="search__input"
               onKeyDown={(e) => handleKeyDown(e)}
+              // InputProps={{
+              //   endAdornment: (
+              //     <InputAdornment>
+              //       <IconButton>
+              //         <SearchIcon />
+              //       </IconButton>
+              //     </InputAdornment>
+              //   ),
+              // }}
               // InputProps={{ classes }}
               // InputProps={{
               //   endAdornment: (
@@ -119,10 +127,11 @@ const Search = () => {
               //   ),
               // }}
             />
-
-            <IconButton type="submit" aria-label="search">
-              <SearchIcon onClick={searchQuery} />
+            {/**
+            <IconButton type="submit" onClick={searchQuery} aria-label="search">
+              <SearchIcon />
             </IconButton>
+            */}
           </form>
         )}
       />

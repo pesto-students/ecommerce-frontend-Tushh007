@@ -29,7 +29,7 @@ const Home = () => {
             </p>
             <button
               className="home__categories1__button"
-              onClick={(e) => history.push('/category/party%20wear')}
+              onClick={(e) => history.push('/products/party%20wear')}
             >
               {translator('SHOP NOW')}
             </button>
@@ -50,7 +50,7 @@ const Home = () => {
             </p>
             <button
               className="home__categories1__button"
-              onClick={(e) => history.push('/category/casual%20wear')}
+              onClick={(e) => history.push('/products/casual%20wear')}
             >
               {translator('SHOP NOW')}
             </button>
@@ -71,7 +71,7 @@ const Home = () => {
             </p>
             <button
               className="home__categories1__button"
-              onClick={(e) => history.push('/category/accessories')}
+              onClick={(e) => history.push('/products/accessories')}
             >
               {translator('FOOTWEAR')}
             </button>
@@ -90,7 +90,7 @@ const Home = () => {
             </p>
             <button
               className="home__categories1__button"
-              onClick={(e) => history.push('/category/footwear')}
+              onClick={(e) => history.push('/products/footwear')}
             >
               {translator('SHOP NOW')}
             </button>

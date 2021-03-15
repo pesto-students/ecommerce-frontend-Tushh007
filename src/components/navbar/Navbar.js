@@ -1,27 +1,36 @@
-import React, { useState } from "react";
-import IconButton from "@material-ui/core/IconButton";
-import Search from "../Search/Search";
-import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
-import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import Badge from "@material-ui/core/Badge";
-import Login from "../Login/Login";
-import "./Navbar.scss";
-import translate from "../../utils/i18n/translate";
-import { useStateValue } from "../../store/StoreProvider";
+import React, { useState } from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import Search from '../Search/Search';
+import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Badge from '@material-ui/core/Badge';
+import Login from '../Login/Login';
+import './Navbar.scss';
+import translate from '../../utils/i18n/translate';
+import { useStateValue } from '../../store/StoreProvider';
 
-import Tooltip from "@material-ui/core/Tooltip";
-import LanguageIcon from "@material-ui/icons/Language";
-import { LOCALES } from "../../utils/i18n";
+import Tooltip from '@material-ui/core/Tooltip';
+import LanguageIcon from '@material-ui/icons/Language';
+import { LOCALES } from '../../utils/i18n';
+
+import { auth } from '../../utils/firebase';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [{ locale, user }, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -40,7 +49,7 @@ const Navbar = () => {
 
   const handleLanguageMenuClose = (locale) => {
     dispatch({
-      type: "SET_LOCALE",
+      type: 'SET_LOCALE',
       locale: locale,
     });
     setLanguageAnchorEl(null);
@@ -52,25 +61,25 @@ const Navbar = () => {
   };
 
   // Language Icon Logic
-  const languageId = "languageMenu";
+  const languageId = 'languageMenu';
   const renderLanguageMenu = (
     <Menu
       anchorEl={languageAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id={languageId}
       keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isLanguageMenuOpen}
       onClose={handleLanguageMenuClose}
     >
       <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.ENGLISH)}>
-        {translator("English")}
+        {translator('English')}
       </MenuItem>
       <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.GERMAN)}>
-        {translator("German")}
+        {translator('German')}
       </MenuItem>
       <MenuItem onClick={() => handleLanguageMenuClose(LOCALES.FRENCH)}>
-        {translator("French")}
+        {translator('French')}
       </MenuItem>
     </Menu>
   );
@@ -92,7 +101,8 @@ const Navbar = () => {
     handleMobileMenuClose();
   };
 
-  const handleLoginClick = () => {
+  const handleLogoutClick = () => {
+    handleAuthentication();
     setAnchorEl(null);
     handleMobileMenuClose();
     setOpen(true);
@@ -102,32 +112,30 @@ const Navbar = () => {
     setAnchorEl(e.currentTarget);
   };
 
-  const menuId = "desktopProfileMenu";
+  const menuId = 'desktopProfileMenu';
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleLoginClick}>Login</MenuItem>
-      <Login open={open} setOpen={setOpen} />
-      <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My orders</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Order History</MenuItem>
+      <MenuItem onClick={handleLogoutClick}>Sign Out</MenuItem>
     </Menu>
   );
 
-  const mobileMenuId = "mobileProfileMenu";
+  const mobileMenuId = 'mobileProfileMenu';
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
@@ -158,18 +166,39 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h2 className="navbarLogo">TagiFy</h2>
-      <h2 className="navbarMobileLogo">TF</h2>
+      <Link className="navbar__link" to="/">
+        <h2 className="navbarLogo">TagiFy</h2>
+        <h2 className="navbarMobileLogo">TF</h2>
+      </Link>
+
       <div className="navbar_right">
-        <Search />
+        <Search className="search__input" />
         <div className="navbar_desktopMenu">
-          <IconButton
-            aria-controls={menuId}
-            aria-haspopup="true"
-            onClick={handleDesktopProfileMenuclick}
-          >
-            <PersonOutlineOutlinedIcon />
-          </IconButton>
+          {user ? (
+            <>
+              <span className="navbar__username">Hello, {user.email}</span>
+              <Tooltip title="Profile" aria-label="Profile">
+                <IconButton
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleDesktopProfileMenuclick}
+                >
+                  <PersonOutlineOutlinedIcon />
+                </IconButton>
+              </Tooltip>
+            </>
+          ) : (
+            <>
+              <span className="navbar__username">
+                {translator('Hello, Guest')}
+              </span>
+
+              <Tooltip title="Login" aria-label="Login">
+                <Login />
+              </Tooltip>
+            </>
+          )}
+
           <Tooltip title="Language" aria-label="Language">
             <IconButton
               aria-controls={languageId}
@@ -179,13 +208,27 @@ const Navbar = () => {
               <LanguageIcon />
             </IconButton>
           </Tooltip>
-          <IconButton>
-            <FavoriteBorderIcon />
-          </IconButton>
-          <IconButton>
-            <ShoppingCartOutlinedIcon />
-          </IconButton>
+
+          {user ? (
+            <Link to="/wishlist">
+              <Tooltip title="Favourite" aria-label="Favourite">
+                <IconButton>
+                  <FavoriteBorderIcon />
+                </IconButton>
+              </Tooltip>
+            </Link>
+          ) : (
+            <></>
+          )}
+          <Link to="/cart">
+            <Tooltip title="Cart" aria-label="Cart">
+              <IconButton>
+                <ShoppingCartOutlinedIcon />
+              </IconButton>
+            </Tooltip>
+          </Link>
         </div>
+
         <div className="navbar_mobileMenu">
           <IconButton
             aria-label="show more"
