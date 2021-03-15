@@ -19,9 +19,19 @@ import { LOCALES } from '../../utils/i18n';
 
 import { auth } from '../../utils/firebase';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 const Navbar = () => {
-  const [{ user }, dispatch] = useStateValue();
+  const classes = useStyles();
+  const [{ user, cart, wishlist }, dispatch] = useStateValue();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
@@ -212,8 +222,10 @@ const Navbar = () => {
           {user ? (
             <Link to="/wishlist">
               <Tooltip title="Favourite" aria-label="Favourite">
-                <IconButton>
-                  <FavoriteBorderIcon />
+                <IconButton className={classes.root}>
+                  <Badge badgeContent={wishlist.length} color="secondary">
+                    <FavoriteBorderIcon />
+                  </Badge>
                 </IconButton>
               </Tooltip>
             </Link>
@@ -222,8 +234,10 @@ const Navbar = () => {
           )}
           <Link to="/cart">
             <Tooltip title="Cart" aria-label="Cart">
-              <IconButton>
-                <ShoppingCartOutlinedIcon />
+              <IconButton className={classes.root}>
+                <Badge badgeContent={cart.length} color="secondary">
+                  <ShoppingCartOutlinedIcon />
+                </Badge>
               </IconButton>
             </Tooltip>
           </Link>

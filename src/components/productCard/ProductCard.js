@@ -4,13 +4,12 @@ import { useHistory } from 'react-router-dom';
 import ProductRating from '../ProductRating/ProductRating';
 import Tooltip from '@material-ui/core/Tooltip';
 import { useStateValue } from '../../store/StoreProvider';
-import WishlishIcon from '../WishlistIcon/WishlistIcon';
+import WishlistIcon from '../WishlistIcon/WishlistIcon';
 import CartIcon from '../CartIcon/CartIcon';
 import { useLocation } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
   const location = useLocation();
-  console.log(location.pathname);
 
   const [{ user }] = useStateValue();
   const history = useHistory();
@@ -38,14 +37,14 @@ const ProductCard = ({ product }) => {
   return (
     <div className="ProductCard">
       <div className="ImgContainer">
-        <img src={product?.imageUrl} alt="" />
+        <img src={product?.imageUrl} alt="" onClick={(e) => renderProduct(e)} />
       </div>
       <div className="ProductDetailContainer">
         <div className="ProductContent">
           <Tooltip title={toTitleCase(product?.name)}>
             <p onClick={(e) => renderProduct(e)}>{productName}</p>
           </Tooltip>
-          {user ? <WishlishIcon product={product} /> : <></>}
+          {user ? <WishlistIcon product={product} /> : <></>}
         </div>
         <div className="productBuyContainer">
           <div className="priceRating">

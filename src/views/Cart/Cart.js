@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Cart.scss';
 import { useStateValue } from '../../store/StoreProvider';
 import userEvent from '@testing-library/user-event';
@@ -7,6 +7,10 @@ import CartProduct from '../../components/CartProduct/CartProduct';
 
 function Cart() {
   const [{ cart, user }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="cart">

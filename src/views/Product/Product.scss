@@ -6,6 +6,18 @@
   display: flex;
   flex-direction: column;
   margin: 55px;
+  
+  .product__trail {
+    display: flex;
+    align-items: center;
+  }
+
+  .product__trailElement {
+    padding: 0 5px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
   .productArea {
     display: flex;
 

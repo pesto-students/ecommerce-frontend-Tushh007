@@ -33,11 +33,50 @@ function CartProduct({
 }) {
   const [{ cart }, dispatch] = useStateValue();
 
+  const addToCart = () => {
+    dispatch({
+      type: 'ADD_TO_CART',
+      item: {
+        id,
+        name,
+        price,
+        category,
+        rating,
+        imageUrl,
+        hideButton,
+      },
+    });
+    removeFromWishlist();
+  };
+
   const removeFromCart = () => {
     dispatch({
       type: 'REMOVE_FROM_CART',
       id: id,
     });
+  };
+
+  const removeFromWishlist = () => {
+    dispatch({
+      type: 'REMOVE_FROM_WISHLIST',
+      id: id,
+    });
+  };
+
+  const addToWishlist = () => {
+    dispatch({
+      type: 'ADD_TO_WISHLIST',
+      item: {
+        id,
+        name,
+        price,
+        category,
+        rating,
+        imageUrl,
+        hideButton,
+      },
+    });
+    removeFromCart();
   };
 
   return (
@@ -52,10 +91,22 @@ function CartProduct({
           <ProductRating rating={rating} />
         </div>
 
-        {!hideButton && (
-          <StyledButton onClick={removeFromCart}>
-            Remove from basket
-          </StyledButton>
+        {!hideButton ? (
+          <>
+            <StyledButton onClick={removeFromCart}>
+              Remove from basket
+            </StyledButton>
+            <StyledButton onClick={addToWishlist}>
+              Move to Wishlist
+            </StyledButton>
+          </>
+        ) : (
+          <>
+            <StyledButton onClick={removeFromWishlist}>
+              Remove from Wishlist
+            </StyledButton>
+            <StyledButton onClick={addToCart}>Add to Cart</StyledButton>
+          </>
         )}
       </div>
     </div>

@@ -7,12 +7,15 @@ import './WishlistIcon.scss';
 function WishlistIcon({ product }) {
   const [{ wishlist }, dispatch] = useStateValue();
 
+  const inWishlist = wishlist.find((item) => item.id === product.id);
+
   const addToWishlist = () => {
-    dispatch({
-      type: 'ADD_TO_WISHLIST',
-      item: product,
-    });
-    console.log(wishlist);
+    if (!inWishlist) {
+      dispatch({
+        type: 'ADD_TO_WISHLIST',
+        item: product,
+      });
+    }
   };
   return (
     <div className="wishlistIcon">
