@@ -1,73 +1,51 @@
+@import "../../components/colors";
 .navbar {
-  font-family: 'Raleway', sans-serif;
-  color: '#202124';
+  font-family: "Raleway", sans-serif;
+  color: "#202124";
   font-weight: 500;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
   width: 90%;
-  margin: auto;
   height: 60px;
+  margin: auto;
   display: flex;
   align-items: center;
   background-color: white;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
-  @media (max-width: 600px) {
-    width: 100%;
-    margin: 0;
-  }
 
   .navbarLogo {
-    object-fit: contain;
     @media (max-width: 600px) {
       display: none;
     }
   }
+
   .navbarMobileLogo {
     @media (min-width: 601px) {
       display: none;
     }
   }
 
-  .navbar__search {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    border-radius: 24px;
+  .navbar__link {
+    color: black;
+    text-decoration: none;
   }
 
-  .navbar__right {
-    .navbar__desktopMenu {
-      display: flex;
-      justify-content: space-evenly;
+  .navbar_desktopMenu {
+    display: flex;
+    align-items: center;
+  }
 
-      .navbar__option {
-        display: flex;
-
-        .navbar__username {
-          display: flex;
-          font-size: 16px;
-          align-items: center;
-          color: rgba(0, 0, 0, 0.54);
-        }
-      }
-
+  .navbar_right {
+    display: flex;
+    .navbar_desktopMenu {
       @media (max-width: 600px) {
         display: none;
       }
     }
-    .navbar__mobileMenu {
+    .navbar_mobileMenu {
       @media (min-width: 601px) {
         display: none;
       }
     }
-  }
-
-  .navbar__link {
-    color: black;
-    text-decoration: none;
   }
 }

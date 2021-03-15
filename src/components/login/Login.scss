@@ -1,0 +1,61 @@
+@import "../../components/colors";
+.SocialLogin {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  @media (max-width: 600px){
+      flex-direction: column;
+  }
+  .GoogleButton {
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    border: 1px solid $light-gray;
+    padding: 10px;
+    outline-width: 0;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      border-color: $gray;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  }
+  .FacebookButton {
+    background-color: $facebook-blue;
+    display: flex;
+    align-items: center;
+    border: 1px solid $facebook-blue;
+    padding: 10px;
+    outline-width: 0;
+    color: $white;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      border-color: $dark-gray;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      color: $white;
+    }
+  }
+}
+
+.NotRegistered {
+  .NotRegisteredButton {
+    background-color: $white;
+    color: $orange;
+    outline-width: 0px;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
+  }
+}

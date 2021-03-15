@@ -1,6 +1,6 @@
-import React from 'react';
-import './ProductInfo.css';
-import translate from '../../utils/i18n/translate';
+import React from "react";
+import "./ProductInfo.scss";
+import translate from "../../utils/i18n/translate";
 
 function ProductInfo({ product }) {
   const translator = (item) =>
@@ -22,7 +22,7 @@ function ProductInfo({ product }) {
       </div>
       <div className="productInfo__actions">
         <button type="submit" className="productInfo__addToCart">
-          {translator('Add to Cart')}
+          {translator("Add to Cart")}
         </button>
       </div>
     </div>

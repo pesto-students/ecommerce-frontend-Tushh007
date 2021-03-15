@@ -1,0 +1,27 @@
+@import "../../components/colors";
+.SubscribeInput {
+  max-width: 400px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  .InputBox {
+    max-width: 400px;
+    width: 65%;
+    height: inherit;
+    outline-width: 0;
+    padding-left: 10px;
+  }
+  .SubscribeBtn {
+    width: 30%;
+    outline-width: 0;
+    color: white;
+    background-color: $orange;
+    border: none;
+    padding: 10px;
+    transition: padding 0.5s;
+    &:hover {
+      cursor: pointer;
+      padding-right: 15px;
+    }
+  }
+}

@@ -1,48 +1,37 @@
-import React from 'react';
-import './Sidebar.css';
-import translate from '../../utils/i18n/translate';
+import React from "react";
+import "./Sidebar.scss";
+import translate from "../../utils/i18n/translate";
+import { useHistory } from "react-router-dom";
 
 function Sidebar() {
+  const history = useHistory();
   const translator = (item) =>
     translate(item) === item ? item : translate(item);
   return (
     <div className="sidebar">
       <div className="sidebar__options">
-        <h5>{translator('Categories')}</h5>
+        <h5>{translator("Categories")}</h5>
         <ul>
-          <li>
-            <a>{translator('Category')} 1</a>
+          <li
+            tabIndex="0"
+            onClick={(e) => history.push("/products/party%20wear")}
+          >
+            <a>{translator("Party Wear")}</a>
           </li>
-          <li>
-            <a>{translator('Category')} 2</a>
+          <li
+            tabIndex="0"
+            onClick={(e) => history.push("/products/casual%20wear")}
+          >
+            <a>{translator("Casual Wear")}</a>
           </li>
-          <li>
-            <a>{translator('Category')} 3</a>
+          <li
+            tabIndex="0"
+            onClick={(e) => history.push("/products/accessories")}
+          >
+            <a>{translator("Accessories")}</a>
           </li>
-          <li>
-            <a>{translator('Category')} 4</a>
-          </li>
-          <li>
-            <a>{translator('Category')} 5</a>
-          </li>
-        </ul>
-
-        <h5>{translator('Filters')}</h5>
-        <ul>
-          <li>
-            <a>{translator('Filter')} 1</a>
-          </li>
-          <li>
-            <a>{translator('Filter')} 2</a>
-          </li>
-          <li>
-            <a>{translator('Filter')} 3</a>
-          </li>
-          <li>
-            <a>{translator('Filter')} 4</a>
-          </li>
-          <li>
-            <a>{translator('Filter')} 5</a>
+          <li tabIndex="0" onClick={(e) => history.push("/products/footwear")}>
+            <a>{translator("Footwear")}</a>
           </li>
         </ul>
       </div>
