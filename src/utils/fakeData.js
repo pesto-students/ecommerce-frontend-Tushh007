@@ -3,8 +3,9 @@ export const FEATURED_PRODUCTS = [
     id: 3,
     name: 'Sleeveless Deana Maxi Dress',
     price: 950,
-    rating: '4.7',
+    rating: 4.7,
     category: 'casual wear',
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
@@ -13,7 +14,8 @@ export const FEATURED_PRODUCTS = [
     name: 'SASSAFRAS Women Maroon Solid Tiered Maxi Dress',
     price: 1999,
     category: 'party wear',
-    rating: '4.9',
+    rating: 4.9,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11364418/2020/1/28/8e31363f-8ac5-4669-9aa8-114d502d7be61580207577109-SASSAFRAS-Women-Maroon-Solid-Tiered-Maxi-Dress-3781580207574-1.jpg',
   },
@@ -22,7 +24,8 @@ export const FEATURED_PRODUCTS = [
     name: 'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
     price: 3999,
     category: 'accessories',
-    rating: '4.3',
+    rating: 4.3,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1620103/2020/11/17/77ba2931-9a18-44fd-b537-a4a3833280341605623766837-Daniel-Klein-Premium-Women-Silver-Toned-Dial-Watch-DK11138-2-2.jpg',
   },
@@ -31,7 +34,8 @@ export const FEATURED_PRODUCTS = [
     name: `Crocs Unisex Navy Blue Solid Bayaband Clogs`,
     price: 2979,
     category: 'footwear',
-    rating: '4.5',
+    rating: 4.5,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11567688/2020/3/20/1f4d4b99-8a35-48af-87da-f966a2c23b5a1584703400474-Crocs-Unisex-Navy-Blue-Sandals-2211584703399157-1.jpg',
   },
@@ -39,8 +43,9 @@ export const FEATURED_PRODUCTS = [
     id: 3,
     name: 'Sleeveless Deana Maxi Dress',
     price: 950,
-    rating: '4.7',
+    rating: 4.7,
     category: 'casual wear',
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
@@ -49,7 +54,8 @@ export const FEATURED_PRODUCTS = [
     name: 'SASSAFRAS Women Maroon Solid Tiered Maxi Dress',
     price: 1999,
     category: 'party wear',
-    rating: '4.9',
+    rating: 4.9,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11364418/2020/1/28/8e31363f-8ac5-4669-9aa8-114d502d7be61580207577109-SASSAFRAS-Women-Maroon-Solid-Tiered-Maxi-Dress-3781580207574-1.jpg',
   },
@@ -58,7 +64,8 @@ export const FEATURED_PRODUCTS = [
     name: 'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
     price: 3999,
     category: 'accessories',
-    rating: '4.3',
+    rating: 4.3,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1620103/2020/11/17/77ba2931-9a18-44fd-b537-a4a3833280341605623766837-Daniel-Klein-Premium-Women-Silver-Toned-Dial-Watch-DK11138-2-2.jpg',
   },
@@ -67,7 +74,8 @@ export const FEATURED_PRODUCTS = [
     name: `Crocs Unisex Navy Blue Solid Bayaband Clogs`,
     price: 2979,
     category: 'footwear',
-    rating: '4.5',
+    rating: 4.5,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11567688/2020/3/20/1f4d4b99-8a35-48af-87da-f966a2c23b5a1584703400474-Crocs-Unisex-Navy-Blue-Sandals-2211584703399157-1.jpg',
   },
@@ -75,8 +83,9 @@ export const FEATURED_PRODUCTS = [
     id: 3,
     name: 'Sleeveless Deana Maxi Dress',
     price: 950,
-    rating: '4.7',
+    rating: 4.7,
     category: 'casual wear',
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
   },
@@ -85,7 +94,8 @@ export const FEATURED_PRODUCTS = [
     name: 'SASSAFRAS Women Maroon Solid Tiered Maxi Dress',
     price: 1999,
     category: 'party wear',
-    rating: '4.9',
+    rating: 4.9,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11364418/2020/1/28/8e31363f-8ac5-4669-9aa8-114d502d7be61580207577109-SASSAFRAS-Women-Maroon-Solid-Tiered-Maxi-Dress-3781580207574-1.jpg',
   },
@@ -94,7 +104,8 @@ export const FEATURED_PRODUCTS = [
     name: 'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
     price: 3999,
     category: 'accessories',
-    rating: '4.3',
+    rating: 4.3,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1620103/2020/11/17/77ba2931-9a18-44fd-b537-a4a3833280341605623766837-Daniel-Klein-Premium-Women-Silver-Toned-Dial-Watch-DK11138-2-2.jpg',
   },
@@ -103,7 +114,8 @@ export const FEATURED_PRODUCTS = [
     name: `Crocs Unisex Navy Blue Solid Bayaband Clogs`,
     price: 2979,
     category: 'footwear',
-    rating: '4.5',
+    rating: 4.5,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11567688/2020/3/20/1f4d4b99-8a35-48af-87da-f966a2c23b5a1584703400474-Crocs-Unisex-Navy-Blue-Sandals-2211584703399157-1.jpg',
   },
@@ -115,7 +127,8 @@ const CASUAL_WEAR = [
     name: 'Tinny Three Quarter Sleeve Dress',
     price: 750,
     category: 'casual wear',
-    rating: '4.3',
+    rating: 4.3,
+    thumbnails: ['https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg','https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',],
     imageUrl:
       'https://cdn.iclothing.com/media/catalog/product/cache/1/thumbnail/1345x1992/9df78eab33525d08d6e5fb8d27136e95/t/i/tinny_three_quarter_sleeve_dress_in_navy_and_green_stripe-3.jpg',
   },
@@ -132,7 +145,7 @@ const CASUAL_WEAR = [
     id: 3,
     name: 'Sleeveless Deana Maxi Dress',
     price: 950,
-    rating: '4.7',
+    rating: 4.7,
     category: 'casual wear',
     imageUrl:
       'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
@@ -141,7 +154,7 @@ const CASUAL_WEAR = [
     id: 4,
     name: 'Tinny Three Quarter Sleeve Dress',
     price: 750,
-    rating: '4.3',
+    rating: 4.3,
     category: 'casual wear',
     imageUrl:
       'https://cdn.iclothing.com/media/catalog/product/cache/1/thumbnail/1345x1992/9df78eab33525d08d6e5fb8d27136e95/t/i/tinny_three_quarter_sleeve_dress_in_navy_and_green_stripe-3.jpg',
@@ -159,7 +172,7 @@ const CASUAL_WEAR = [
     id: 6,
     name: 'Sleeveless Deana Maxi Dress',
     price: 950,
-    rating: '4.7',
+    rating: 4.7,
     category: 'casual wear',
     imageUrl:
       'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
@@ -168,7 +181,7 @@ const CASUAL_WEAR = [
     id: 7,
     name: 'Tinny Three Quarter Sleeve Dress',
     price: 750,
-    rating: '4.3',
+    rating: 4.3,
     category: 'casual wear',
     imageUrl:
       'https://cdn.iclothing.com/media/catalog/product/cache/1/thumbnail/1345x1992/9df78eab33525d08d6e5fb8d27136e95/t/i/tinny_three_quarter_sleeve_dress_in_navy_and_green_stripe-3.jpg',
@@ -186,7 +199,7 @@ const CASUAL_WEAR = [
     id: 9,
     name: 'Sleeveless Deana Maxi Dress',
     price: 950,
-    rating: '4.7',
+    rating: 4.7,
     category: 'casual wear',
     imageUrl:
       'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
@@ -195,7 +208,7 @@ const CASUAL_WEAR = [
     id: 10,
     name: 'Tinny Three Quarter Sleeve Dress',
     price: 750,
-    rating: '4.3',
+    rating: 4.3,
     category: 'casual wear',
     imageUrl:
       'https://cdn.iclothing.com/media/catalog/product/cache/1/thumbnail/1345x1992/9df78eab33525d08d6e5fb8d27136e95/t/i/tinny_three_quarter_sleeve_dress_in_navy_and_green_stripe-3.jpg',
@@ -213,7 +226,7 @@ const CASUAL_WEAR = [
     id: 12,
     name: 'Sleeveless Deana Maxi Dress',
     price: 950,
-    rating: '4.7',
+    rating: 4.7,
     category: 'casual wear',
     imageUrl:
       'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364356/2020/1/24/23e82afe-b43e-49ae-b7d2-88dc53b342311579863771350-SASSAFRAS-Women-Cream-Coloured-Printed-Maxi-Dress-9231579863-3.jpg',
@@ -244,7 +257,7 @@ const PARTY_WEAR = [
     name: 'SASSAFRAS Women Maroon Solid Tiered Maxi Dress',
     price: 1999,
     category: 'party wear',
-    rating: '4.9',
+    rating: 4.9,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11364418/2020/1/28/8e31363f-8ac5-4669-9aa8-114d502d7be61580207577109-SASSAFRAS-Women-Maroon-Solid-Tiered-Maxi-Dress-3781580207574-1.jpg',
   },
@@ -271,7 +284,7 @@ const PARTY_WEAR = [
     name: 'SASSAFRAS Women Maroon Solid Tiered Maxi Dress',
     price: 1999,
     category: 'party wear',
-    rating: '4.9',
+    rating: 4.9,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11364418/2020/1/28/8e31363f-8ac5-4669-9aa8-114d502d7be61580207577109-SASSAFRAS-Women-Maroon-Solid-Tiered-Maxi-Dress-3781580207574-1.jpg',
   },
@@ -298,7 +311,7 @@ const PARTY_WEAR = [
     name: 'SASSAFRAS Women Maroon Solid Tiered Maxi Dress',
     price: 1999,
     category: 'party wear',
-    rating: '4.9',
+    rating: 4.9,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11364418/2020/1/28/8e31363f-8ac5-4669-9aa8-114d502d7be61580207577109-SASSAFRAS-Women-Maroon-Solid-Tiered-Maxi-Dress-3781580207574-1.jpg',
   },
@@ -325,7 +338,7 @@ const PARTY_WEAR = [
     name: 'SASSAFRAS Women Maroon Solid Tiered Maxi Dress',
     price: 1999,
     category: 'party wear',
-    rating: '4.9',
+    rating: 4.9,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11364418/2020/1/28/8e31363f-8ac5-4669-9aa8-114d502d7be61580207577109-SASSAFRAS-Women-Maroon-Solid-Tiered-Maxi-Dress-3781580207574-1.jpg',
   },
@@ -337,7 +350,7 @@ const ACCESSORIES = [
     name: 'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
     price: 3999,
     category: 'accessories',
-    rating: '4.3',
+    rating: 4.3,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1620103/2020/11/17/77ba2931-9a18-44fd-b537-a4a3833280341605623766837-Daniel-Klein-Premium-Women-Silver-Toned-Dial-Watch-DK11138-2-2.jpg',
   },
@@ -365,7 +378,7 @@ const ACCESSORIES = [
     name: 'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
     price: 3999,
     category: 'accessories',
-    rating: '4.3',
+    rating: 4.3,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1620103/2020/11/17/77ba2931-9a18-44fd-b537-a4a3833280341605623766837-Daniel-Klein-Premium-Women-Silver-Toned-Dial-Watch-DK11138-2-2.jpg',
   },
@@ -393,7 +406,7 @@ const ACCESSORIES = [
     name: 'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
     price: 3999,
     category: 'accessories',
-    rating: '4.3',
+    rating: 4.3,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1620103/2020/11/17/77ba2931-9a18-44fd-b537-a4a3833280341605623766837-Daniel-Klein-Premium-Women-Silver-Toned-Dial-Watch-DK11138-2-2.jpg',
   },
@@ -421,7 +434,7 @@ const ACCESSORIES = [
     name: 'Daniel Klein Premium Women Silver-Toned Dial Watch DK11138-2s',
     price: 3999,
     category: 'accessories',
-    rating: '4.3',
+    rating: 4.3,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1620103/2020/11/17/77ba2931-9a18-44fd-b537-a4a3833280341605623766837-Daniel-Klein-Premium-Women-Silver-Toned-Dial-Watch-DK11138-2-2.jpg',
   },
@@ -469,7 +482,7 @@ const FOOTWEAR = [
     name: `Crocs Unisex Navy Blue Solid Bayaband Clogs`,
     price: 2979,
     category: 'footwear',
-    rating: '4.5',
+    rating: 4.5,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11567688/2020/3/20/1f4d4b99-8a35-48af-87da-f966a2c23b5a1584703400474-Crocs-Unisex-Navy-Blue-Sandals-2211584703399157-1.jpg',
   },
@@ -496,7 +509,7 @@ const FOOTWEAR = [
     name: `Crocs Unisex Navy Blue Solid Bayaband Clogs`,
     price: 2979,
     category: 'footwear',
-    rating: '4.5',
+    rating: 4.5,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11567688/2020/3/20/1f4d4b99-8a35-48af-87da-f966a2c23b5a1584703400474-Crocs-Unisex-Navy-Blue-Sandals-2211584703399157-1.jpg',
   },
@@ -523,7 +536,7 @@ const FOOTWEAR = [
     name: `Crocs Unisex Navy Blue Solid Bayaband Clogs`,
     price: 2979,
     category: 'footwear',
-    rating: '4.5',
+    rating: 4.5,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11567688/2020/3/20/1f4d4b99-8a35-48af-87da-f966a2c23b5a1584703400474-Crocs-Unisex-Navy-Blue-Sandals-2211584703399157-1.jpg',
   },
@@ -550,7 +563,7 @@ const FOOTWEAR = [
     name: `Crocs Unisex Navy Blue Solid Bayaband Clogs`,
     price: 2979,
     category: 'footwear',
-    rating: '4.5',
+    rating: 4.5,
     imageUrl:
       'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11567688/2020/3/20/1f4d4b99-8a35-48af-87da-f966a2c23b5a1584703400474-Crocs-Unisex-Navy-Blue-Sandals-2211584703399157-1.jpg',
   },

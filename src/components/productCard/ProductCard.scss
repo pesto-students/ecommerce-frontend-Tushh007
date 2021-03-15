@@ -1,9 +1,9 @@
 
 .ProductCard {
-  max-width: 224px;
+  width: 224px;
   margin: 20px;
   .ImgContainer {
-    max-width: inherit;
+    width: 224px;
     object-fit: contain;
     img {
       width: 100%;

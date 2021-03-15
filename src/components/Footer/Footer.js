@@ -1,30 +1,30 @@
-import React from 'react';
-import SubscribeInput from '../SubscribeInput/SubscribeInput';
-import './Footer.scss';
+import React from "react";
+import SubscribeInput from "../SubscribeInput/SubscribeInput";
+import "./Footer.scss";
 
 const Footer = () => {
   const footerData = [
     {
-      footerTitle: 'Links',
-      footerSubCategories: ['My Account', 'Wishlist', 'About Us', 'Cart'],
+      footerTitle: "Links",
+      footerSubCategories: ["My Account", "Wishlist", "About Us", "Cart"],
     },
     {
-      footerTitle: 'Categories',
+      footerTitle: "Categories",
       footerSubCategories: [
-        'Party Wear',
-        'Casual Wear',
-        'Accessories',
-        'Footwear',
+        "Party Wear",
+        "Casual Wear",
+        "Accessories",
+        "Footwear",
       ],
     },
     {
-      footerTitle: 'Help',
+      footerTitle: "Help",
       footerSubCategories: [
-        'Customer Service',
-        'Contact Us',
-        'Return Policy',
-        'Terms and Condition',
-        'Payment Policy',
+        "Customer Service",
+        "Contact Us",
+        "Return Policy",
+        "Terms and Condition",
+        "Payment Policy",
       ],
     },
   ];
