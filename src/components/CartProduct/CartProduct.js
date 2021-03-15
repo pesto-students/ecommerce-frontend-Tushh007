@@ -1,24 +1,25 @@
-import React from 'react';
-import './CartProduct.scss';
-import { useStateValue } from '../../store/StoreProvider';
-import ProductRating from '../ProductRating/ProductRating';
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
+import React from "react";
+import "./CartProduct.scss";
+import { useStateValue } from "../../store/StoreProvider";
+import ProductRating from "../ProductRating/ProductRating";
+import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
 
 const StyledButton = withStyles({
   root: {
-    backgroundColor: '#202124',
-    color: '#fff',
-    borderRadius: '2px',
-    marginTop: '10px',
-    marginBottom: '50px',
-    padding: '10px 50px',
-    '&:hover': {
-      backgroundColor: '#202124',
+    backgroundColor: "#202124",
+    color: "#fff",
+    borderRadius: "2px",
+    marginTop: "10px",
+    marginBottom: "50px",
+    marginRight: "10px",
+    padding: "10px 50px",
+    "&:hover": {
+      backgroundColor: "#202124",
     },
   },
   label: {
-    fontSize: '0.8rem',
+    fontSize: "0.6rem",
   },
 })(Button);
 
@@ -35,7 +36,7 @@ function CartProduct({
 
   const addToCart = () => {
     dispatch({
-      type: 'ADD_TO_CART',
+      type: "ADD_TO_CART",
       item: {
         id,
         name,
@@ -51,21 +52,21 @@ function CartProduct({
 
   const removeFromCart = () => {
     dispatch({
-      type: 'REMOVE_FROM_CART',
+      type: "REMOVE_FROM_CART",
       id: id,
     });
   };
 
   const removeFromWishlist = () => {
     dispatch({
-      type: 'REMOVE_FROM_WISHLIST',
+      type: "REMOVE_FROM_WISHLIST",
       id: id,
     });
   };
 
   const addToWishlist = () => {
     dispatch({
-      type: 'ADD_TO_WISHLIST',
+      type: "ADD_TO_WISHLIST",
       item: {
         id,
         name,

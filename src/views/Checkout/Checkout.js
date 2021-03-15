@@ -29,10 +29,27 @@ const StyledTextField = withStyles({
 })(TextField);
 
 const Checkout = () => {
-  const [value, setValue] = React.useState("female");
+  const [value, setValue] = React.useState("");
+  const defaultFormDate = {
+    name: "",
+    lastName: "",
+    streetName: "",
+    house: "",
+    city: "",
+    country: "",
+    pincode: "",
+    phone: "",
+  };
+  const [formData, setFormData] = React.useState({ ...defaultFormDate });
 
   const handleChange = (event) => {
     setValue(event.target.value);
+  };
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    console.log(formData);
   };
   return (
     <div className="checkout">
@@ -47,9 +64,11 @@ const Checkout = () => {
               <StyledTextField
                 margin="normal"
                 id="name"
+                name="name"
                 label="name"
                 type="text"
                 variant="outlined"
+                onChange={handleFormChange}
                 fullWidth
               />
             </Grid>
@@ -57,9 +76,11 @@ const Checkout = () => {
               <StyledTextField
                 margin="normal"
                 id="lastName"
+                name="lastName"
                 label="last name"
                 type="text"
                 variant="outlined"
+                onChange={handleFormChange}
                 fullWidth
               />
             </Grid>
