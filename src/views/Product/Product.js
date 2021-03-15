@@ -63,7 +63,6 @@ const Product = () => {
     const data = FAKEDATA[category.toUpperCase().replace(' ', '_')];
     const product = data.find((data) => data.id == productId);
     setProduct(product);
-    console.log(product);
   }, [category, product]);
 
   const handleChange = (event) => {

@@ -10,7 +10,6 @@ import { useLocation } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
   const location = useLocation();
-  console.log(location.pathname);
 
   const [{ user }] = useStateValue();
   const history = useHistory();
