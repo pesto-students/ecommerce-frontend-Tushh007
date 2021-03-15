@@ -6,7 +6,6 @@ import translate from '../../utils/i18n/translate';
 import { useHistory } from 'react-router-dom';
 import './Home.scss';
 import FAKEDATA from '../../utils/fakeData';
-import ProductCard from '../../components/productCard/ProductCard';
 
 const Home = () => {
   const history = useHistory();

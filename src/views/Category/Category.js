@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ProductDeck from '../../components/ProductDeck/ProductDeck.css/ProductDeck';
+import ProductDeck from '../../components/ProductDeck/ProductDeck';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import FAKEDATA from '../../utils/fakeData';
 import './Category.css';
