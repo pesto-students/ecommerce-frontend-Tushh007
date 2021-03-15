@@ -1,19 +1,16 @@
 .navbar {
-  font-family: 'Raleway', sans-serif;
-  color: '#202124';
+  font-family: "Raleway", sans-serif;
+  color: "#202124";
   font-weight: 500;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
   width: 90%;
-  margin: auto;
   height: 60px;
+  margin: auto;
   display: flex;
   align-items: center;
   background-color: white;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 
   .navbarLogo {
     @media (max-width: 600px) {
@@ -36,7 +33,7 @@
     display: flex;
     align-items: center;
   }
-  
+
   .navbar_right {
     display: flex;
     .navbar_desktopMenu {
